@@ -267,6 +267,24 @@ h2 {
     text-decoration: underline;
 }
 
+.detail-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #667eea;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.detail-link:hover {
+    background: #667eea;
+    color: white;
+    transform: translateX(5px);
+}
+
 @media (max-width: 600px) {
     .screen {
         padding: 30px 20px;
