@@ -38,6 +38,14 @@ const groupInfo = {
     musician: {
         title: "―クラシック音楽家編―",
         description: "いくつかの質問に答えて、あなたに似た音楽家を見つけましょう！"
+    },
+    writer: {
+        title: "―世界の文豪編―",
+        description: "いくつかの質問に答えて、あなたに似た文豪を見つけましょう！"
+    },
+    japanesewriter: {
+        title: "―日本の文豪編―",
+        description: "いくつかの質問に答えて、あなたに似た日本の文豪を見つけましょう！"
     }
 };
 
@@ -276,6 +284,234 @@ const sculptorArtists = {
         ],
         evaluation: "東西の文化を融合させた彫刻家。彫刻、庭園、家具デザインなど多岐にわたる作品を制作しました。",
         personality: "国際的で多才。東洋と西洋の架け橋となる、柔軟で創造的な性格です。"
+    }
+};
+
+// 日本の文豪データ
+const japaneseWriterArtists = {
+    soseki: {
+        name: "夏目漱石",
+        icon: "😺",
+        masterpiece: "代表作：『吾輩は猫である』『こころ』",
+        works: [
+            { title: "吾輩は猫である", searchQuery: "夏目漱石 吾輩は猫である" },
+            { title: "こころ", searchQuery: "夏目漱石 こころ" }
+        ],
+        evaluation: "近代日本文学の巨匠。人間の内面を深く掘り下げ、近代人の孤独と苦悩を描きました。",
+        personality: "知的で内省的。人間の心理を深く洞察する、誠実で真摯な性格です。"
+    },
+    ogai: {
+        name: "森鴎外",
+        icon: "⚕️",
+        masterpiece: "代表作：『舞姫』『高瀬舟』",
+        works: [
+            { title: "舞姫", searchQuery: "森鴎外 舞姫" },
+            { title: "高瀬舟", searchQuery: "森鴎外 高瀬舟" }
+        ],
+        evaluation: "医学者にして文豪。理性と感情の葛藤を描き、歴史小説でも傑作を残しました。",
+        personality: "理性的で教養豊か。知性と感性のバランスを保つ、冷静で品格のある性格です。"
+    },
+    akutagawa: {
+        name: "芥川龍之介",
+        icon: "👹",
+        masterpiece: "代表作：『羅生門』『地獄変』",
+        works: [
+            { title: "羅生門", searchQuery: "芥川龍之介 羅生門" },
+            { title: "地獄変", searchQuery: "芥川龍之介 地獄変" }
+        ],
+        evaluation: "短編の名手。人間のエゴイズムと芸術至上主義を、鋭い筆致で描きました。",
+        personality: "繊細で神経質。完璧主義で、人間の醜さと美しさを見つめる鋭敏な感性の持ち主です。"
+    },
+    dazai: {
+        name: "太宰治",
+        icon: "🍂",
+        masterpiece: "代表作：『人間失格』『斜陽』",
+        works: [
+            { title: "人間失格", searchQuery: "太宰治 人間失格" },
+            { title: "斜陽", searchQuery: "太宰治 斜陽" }
+        ],
+        evaluation: "破滅型の作家。人間の弱さと苦悩を赤裸々に描き、多くの読者の心を掴みました。",
+        personality: "繊細で自己破壊的。人間の弱さに共感し、道化を演じながら真実を語る性格です。"
+    },
+    mishima: {
+        name: "三島由紀夫",
+        icon: "⚔️",
+        masterpiece: "代表作：『金閣寺』『仮面の告白』",
+        works: [
+            { title: "金閣寺", searchQuery: "三島由紀夫 金閣寺" },
+            { title: "仮面の告白", searchQuery: "三島由紀夫 仮面の告白" }
+        ],
+        evaluation: "戦後文学の旗手。美と死、肉体と精神をテーマに、華麗な文体で傑作を生み出しました。",
+        personality: "美意識が高く劇的。完璧な美を追求し、行動する知識人としての強い意志を持ちます。"
+    },
+    kawabata: {
+        name: "川端康成",
+        icon: "🌸",
+        masterpiece: "代表作：『雪国』『伊豆の踊子』",
+        works: [
+            { title: "雪国", searchQuery: "川端康成 雪国" },
+            { title: "伊豆の踊子", searchQuery: "川端康成 伊豆の踊子" }
+        ],
+        evaluation: "日本人初のノーベル文学賞受賞者。日本の美意識を繊細な文体で表現しました。",
+        personality: "繊細で美意識が高い。日本の伝統美を愛し、哀愁と虚無を感じる詩的な性格です。"
+    },
+    tanizaki: {
+        name: "谷崎潤一郎",
+        icon: "🌙",
+        masterpiece: "代表作：『細雪』『陰翳礼讃』",
+        works: [
+            { title: "細雪", searchQuery: "谷崎潤一郎 細雪" },
+            { title: "陰翳礼讃", searchQuery: "谷崎潤一郎 陰翳礼讃" }
+        ],
+        evaluation: "耽美派の巨匠。官能と美、日本の伝統美を独自の文体で描きました。",
+        personality: "官能的で美意識が高い。伝統美と女性美を愛する、耽美的な性格です。"
+    },
+    kyoka: {
+        name: "泉鏡花",
+        icon: "🦊",
+        masterpiece: "代表作：『高野聖』『歌行燈』",
+        works: [
+            { title: "高野聖", searchQuery: "泉鏡花 高野聖" },
+            { title: "歌行燈", searchQuery: "泉鏡花 歌行燈" }
+        ],
+        evaluation: "幻想文学の巨匠。妖艶で幻想的な世界を、華麗な文体で描きました。",
+        personality: "幻想的で耽美的。妖しい美を愛し、夢と現実の境界を漂う詩的な性格です。"
+    },
+    kenji: {
+        name: "宮沢賢治",
+        icon: "🌟",
+        masterpiece: "代表作：『銀河鉄道の夜』『注文の多い料理店』",
+        works: [
+            { title: "銀河鉄道の夜", searchQuery: "宮沢賢治 銀河鉄道の夜" },
+            { title: "注文の多い料理店", searchQuery: "宮沢賢治 注文の多い料理店" }
+        ],
+        evaluation: "童話作家にして詩人。宇宙的な視野と深い慈愛で、独自の幻想世界を創造しました。",
+        personality: "純粋で理想主義。自己犠牲的で、すべての生命への愛を持つ聖者のような性格です。"
+    },
+    nakajima: {
+        name: "中島敦",
+        icon: "🐅",
+        masterpiece: "代表作：『山月記』『李陵』",
+        works: [
+            { title: "山月記", searchQuery: "中島敦 山月記" },
+            { title: "李陵", searchQuery: "中島敦 李陵" }
+        ],
+        evaluation: "漢文学に精通した作家。人間の尊厳と挫折を、格調高い文体で描きました。",
+        personality: "知的で誇り高い。芸術家の苦悩と人間の尊厳を理解する、高潔な性格です。"
+    }
+};
+
+// 世界の文豪データ
+const writerArtists = {
+    shakespeare: {
+        name: "ウィリアム・シェイクスピア",
+        icon: "🎭",
+        masterpiece: "代表作：『ハムレット』『ロミオとジュリエット』",
+        works: [
+            { title: "ハムレット", searchQuery: "Shakespeare Hamlet" },
+            { title: "ロミオとジュリエット", searchQuery: "Shakespeare Romeo and Juliet" }
+        ],
+        evaluation: "英文学史上最高の劇作家。人間の本質を深く洞察し、普遍的なテーマを描きました。",
+        personality: "洞察力が深く多才。人間の光と影を理解する、普遍的な知恵を持つ性格です。"
+    },
+    goethe: {
+        name: "ヨハン・ヴォルフガング・フォン・ゲーテ",
+        icon: "📚",
+        masterpiece: "代表作：『ファウスト』『若きウェルテルの悩み』",
+        works: [
+            { title: "ファウスト", searchQuery: "Goethe Faust" },
+            { title: "若きウェルテルの悩み", searchQuery: "Goethe The Sorrows of Young Werther" }
+        ],
+        evaluation: "ドイツ文学の巨匠。詩人、劇作家、小説家として多彩な才能を発揮し、人間の探求を描きました。",
+        personality: "知的で多才。真理を探求し続ける、ルネサンス的な万能の天才です。"
+    },
+    hugo: {
+        name: "ヴィクトル・ユゴー",
+        icon: "🏰",
+        masterpiece: "代表作：『レ・ミゼラブル』『ノートルダム・ド・パリ』",
+        works: [
+            { title: "レ・ミゼラブル", searchQuery: "Victor Hugo Les Miserables" },
+            { title: "ノートルダム・ド・パリ", searchQuery: "Victor Hugo Notre-Dame de Paris" }
+        ],
+        evaluation: "フランス・ロマン主義の巨匠。社会正義と人間愛をテーマに、壮大な物語を紡ぎました。",
+        personality: "情熱的で正義感が強い。弱者に寄り添い、社会を変革しようとする理想主義者です。"
+    },
+    dostoevsky: {
+        name: "フョードル・ドストエフスキー",
+        icon: "🕯️",
+        masterpiece: "代表作：『罪と罰』『カラマーゾフの兄弟』",
+        works: [
+            { title: "罪と罰", searchQuery: "Dostoevsky Crime and Punishment" },
+            { title: "カラマーゾフの兄弟", searchQuery: "Dostoevsky The Brothers Karamazov" }
+        ],
+        evaluation: "人間の深層心理を描いた巨匠。罪と救済、信仰と懐疑を深く掘り下げました。",
+        personality: "深く内省的。人間の闇と光を見つめ、魂の救済を求める哲学的な性格です。"
+    },
+    tolstoy: {
+        name: "レフ・トルストイ",
+        icon: "📖",
+        masterpiece: "代表作：『戦争と平和』『アンナ・カレーニナ』",
+        works: [
+            { title: "戦争と平和", searchQuery: "Tolstoy War and Peace" },
+            { title: "アンナ・カレーニナ", searchQuery: "Tolstoy Anna Karenina" }
+        ],
+        evaluation: "ロシア文学の巨人。壮大なスケールで人間と社会を描き、人生の意味を問いました。",
+        personality: "真理を追求する求道者。道徳的で、人間の生き方を深く考える誠実な性格です。"
+    },
+    baudelaire: {
+        name: "シャルル・ボードレール",
+        icon: "🌹",
+        masterpiece: "代表作：『悪の華』『パリの憂鬱』",
+        works: [
+            { title: "悪の華", searchQuery: "Baudelaire Les Fleurs du mal" },
+            { title: "パリの憂鬱", searchQuery: "Baudelaire Le Spleen de Paris" }
+        ],
+        evaluation: "象徴主義の先駆者。美と悪、憂鬱と官能を詩的に表現し、近代詩の扉を開きました。",
+        personality: "退廃的で繊細。美と悪の境界を探求する、憂鬱で官能的な詩人の魂です。"
+    },
+    kafka: {
+        name: "フランツ・カフカ",
+        icon: "🪲",
+        masterpiece: "代表作：『変身』『審判』",
+        works: [
+            { title: "変身", searchQuery: "Kafka The Metamorphosis" },
+            { title: "審判", searchQuery: "Kafka The Trial" }
+        ],
+        evaluation: "実存主義文学の先駆者。不条理な世界と個人の孤独を、独特の幻想的手法で描きました。",
+        personality: "不安と孤独を抱える。現代社会の不条理を鋭く感じ取る、繊細で内向的な性格です。"
+    },
+    joyce: {
+        name: "ジェイムズ・ジョイス",
+        icon: "🌊",
+        masterpiece: "代表作：『ユリシーズ』『ダブリン市民』",
+        works: [
+            { title: "ユリシーズ", searchQuery: "James Joyce Ulysses" },
+            { title: "ダブリン市民", searchQuery: "James Joyce Dubliners" }
+        ],
+        evaluation: "モダニズム文学の巨匠。意識の流れの手法を確立し、小説の可能性を革新しました。",
+        personality: "実験的で革新的。言語と意識の限界に挑戦する、知的で前衛的な性格です。"
+    },
+    hemingway: {
+        name: "アーネスト・ヘミングウェイ",
+        icon: "🎣",
+        masterpiece: "代表作：『老人と海』『武器よさらば』",
+        works: [
+            { title: "老人と海", searchQuery: "Hemingway The Old Man and the Sea" },
+            { title: "武器よさらば", searchQuery: "Hemingway A Farewell to Arms" }
+        ],
+        evaluation: "ハードボイルド文学の巨匠。簡潔な文体で、男の誇りと人間の尊厳を描きました。",
+        personality: "男性的で行動的。シンプルで力強く、人生を真正面から生きる勇敢な性格です。"
+    },
+    marquez: {
+        name: "ガブリエル・ガルシア＝マルケス",
+        icon: "🦋",
+        masterpiece: "代表作：『百年の孤独』『コレラの時代の愛』",
+        works: [
+            { title: "百年の孤独", searchQuery: "Garcia Marquez One Hundred Years of Solitude" },
+            { title: "コレラの時代の愛", searchQuery: "Garcia Marquez Love in the Time of Cholera" }
+        ],
+        evaluation: "マジックリアリズムの巨匠。幻想と現実を融合させ、ラテンアメリカの魂を描きました。",
+        personality: "幻想的で情熱的。現実と夢を自在に行き来する、魔術的な語り部の性格です。"
     }
 };
 
@@ -5073,6 +5309,1183 @@ const musicianQuestionTree = {
     ]
 };
 
+// 世界の文豪の質問ツリー（7階層）
+const writerQuestionTree = {
+    level: 1,
+    question: "文学で最も表現したいテーマは何ですか？",
+    options: [
+        {
+            text: "人間の本質と普遍的真理",
+            next: {
+                level: 2,
+                question: "どのような真理を探求しますか？",
+                options: [
+                    {
+                        text: "人間の光と影",
+                        next: {
+                            level: 3,
+                            question: "どのように描きますか？",
+                            options: [
+                                {
+                                    text: "劇的に、舞台で",
+                                    next: {
+                                        level: 4,
+                                        question: "何を描きますか？",
+                                        options: [
+                                            {
+                                                text: "愛と憎しみ、生と死",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        {
+                                                            text: "悲劇と喜劇",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    {
+                                                                        text: "洞察力が深い",
+                                                                        next: {
+                                                                            level: 7,
+                                                                            question: "何を理解していますか？",
+                                                                            options: [
+                                                                                { text: "人間の本質", next: { result: "shakespeare" } },
+                                                                                { text: "普遍的な真理", next: { result: "shakespeare" } }
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    { text: "多才", next: { result: "shakespeare" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "ハムレットやマクベス", next: { result: "shakespeare" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "人間の探求と成長",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を追求？",
+                                                    options: [
+                                                        {
+                                                            text: "知識と真理",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "知的", next: { level: 7, question: "何を目指す？", options: [
+                                                                        { text: "万能の天才", next: { result: "goethe" } },
+                                                                        { text: "真理の探求", next: { result: "goethe" } }
+                                                                    ]}},
+                                                                    { text: "多才", next: { result: "goethe" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "ファウスト", next: { result: "goethe" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "壮大な物語で",
+                                    next: {
+                                        level: 4,
+                                        question: "何を描きますか？",
+                                        options: [
+                                            {
+                                                text: "歴史と人間",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんなスケール？",
+                                                    options: [
+                                                        {
+                                                            text: "戦争と平和",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "真理を追求", next: { level: 7, question: "何を問う？", options: [
+                                                                        { text: "人生の意味", next: { result: "tolstoy" } },
+                                                                        { text: "道徳", next: { result: "tolstoy" } }
+                                                                    ]}},
+                                                                    { text: "誠実", next: { result: "tolstoy" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "アンナ・カレーニナ", next: { result: "tolstoy" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "社会と正義",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を訴える？",
+                                                    options: [
+                                                        { text: "人間愛", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "情熱的", next: { result: "hugo" } },
+                                                            { text: "正義感が強い", next: { result: "hugo" } }
+                                                        ]}},
+                                                        { text: "社会改革", next: { result: "hugo" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "魂の深淵",
+                        next: {
+                            level: 3,
+                            question: "何を探求しますか？",
+                            options: [
+                                {
+                                    text: "罪と救済",
+                                    next: {
+                                        level: 4,
+                                        question: "どのように描きますか？",
+                                        options: [
+                                            {
+                                                text: "深層心理を掘り下げて",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を問いますか？",
+                                                    options: [
+                                                        {
+                                                            text: "罪と罰",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "深く内省的", next: { level: 7, question: "何を求める？", options: [
+                                                                        { text: "魂の救済", next: { result: "dostoevsky" } },
+                                                                        { text: "信仰", next: { result: "dostoevsky" } }
+                                                                    ]}},
+                                                                    { text: "哲学的", next: { result: "dostoevsky" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "カラマーゾフの兄弟", next: { result: "dostoevsky" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "道徳的に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を追求？",
+                                                    options: [
+                                                        { text: "人生の意味", next: { result: "tolstoy" } },
+                                                        { text: "真理", next: { result: "goethe" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "人間の尊厳",
+                                    next: {
+                                        level: 4,
+                                        question: "どう表現しますか？",
+                                        options: [
+                                            {
+                                                text: "社会正義を通して",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描く？",
+                                                    options: [
+                                                        { text: "レ・ミゼラブル", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "理想主義", next: { result: "hugo" } },
+                                                            { text: "情熱的", next: { result: "hugo" } }
+                                                        ]}},
+                                                        { text: "弱者への愛", next: { result: "hugo" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "シンプルに力強く",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描く？",
+                                                    options: [
+                                                        { text: "老人と海", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "男性的", next: { result: "hemingway" } },
+                                                            { text: "勇敢", next: { result: "hemingway" } }
+                                                        ]}},
+                                                        { text: "人間の誇り", next: { result: "hemingway" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            text: "美と芸術、言語の革新",
+            next: {
+                level: 2,
+                question: "どのような美を追求しますか？",
+                options: [
+                    {
+                        text: "退廃的な美と憂鬱",
+                        next: {
+                            level: 3,
+                            question: "何を表現しますか？",
+                            options: [
+                                {
+                                    text: "悪の華",
+                                    next: {
+                                        level: 4,
+                                        question: "どのように？",
+                                        options: [
+                                            {
+                                                text: "詩的に象徴的に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描きますか？",
+                                                    options: [
+                                                        {
+                                                            text: "美と悪の境界",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "退廃的", next: { level: 7, question: "何を追求？", options: [
+                                                                        { text: "憂鬱の美学", next: { result: "baudelaire" } },
+                                                                        { text: "官能と美", next: { result: "baudelaire" } }
+                                                                    ]}},
+                                                                    { text: "繊細", next: { result: "baudelaire" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "パリの憂鬱", next: { result: "baudelaire" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "幻想的に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな世界？",
+                                                    options: [
+                                                        { text: "マジックリアリズム", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "幻想的", next: { result: "marquez" } },
+                                                            { text: "魔術的", next: { result: "marquez" } }
+                                                        ]}},
+                                                        { text: "百年の孤独", next: { result: "marquez" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "不条理と孤独",
+                                    next: {
+                                        level: 4,
+                                        question: "どう表現しますか？",
+                                        options: [
+                                            {
+                                                text: "幻想的な寓話で",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描きますか？",
+                                                    options: [
+                                                        {
+                                                            text: "変身や審判",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "不安", next: { level: 7, question: "何を感じる？", options: [
+                                                                        { text: "孤独", next: { result: "kafka" } },
+                                                                        { text: "不条理", next: { result: "kafka" } }
+                                                                    ]}},
+                                                                    { text: "内向的", next: { result: "kafka" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "城", next: { result: "kafka" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "詩的に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        { text: "憂鬱", next: { result: "baudelaire" } },
+                                                        { text: "美と悪", next: { result: "baudelaire" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "言語と形式の革新",
+                        next: {
+                            level: 3,
+                            question: "どのような革新を目指しますか？",
+                            options: [
+                                {
+                                    text: "意識の流れ",
+                                    next: {
+                                        level: 4,
+                                        question: "何を実験しますか？",
+                                        options: [
+                                            {
+                                                text: "言語の限界",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        {
+                                                            text: "ユリシーズ",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "実験的", next: { level: 7, question: "何に挑戦？", options: [
+                                                                        { text: "小説の革新", next: { result: "joyce" } },
+                                                                        { text: "意識の表現", next: { result: "joyce" } }
+                                                                    ]}},
+                                                                    { text: "前衛的", next: { result: "joyce" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "フィネガンズ・ウェイク", next: { result: "joyce" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "簡潔な文体",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        { text: "男の誇り", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "ハードボイルド", next: { result: "hemingway" } },
+                                                            { text: "行動的", next: { result: "hemingway" } }
+                                                        ]}},
+                                                        { text: "人間の尊厳", next: { result: "hemingway" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "幻想と現実の融合",
+                                    next: {
+                                        level: 4,
+                                        question: "どのように融合させますか？",
+                                        options: [
+                                            {
+                                                text: "マジックリアリズムで",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描きますか？",
+                                                    options: [
+                                                        {
+                                                            text: "百年の孤独",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "幻想的", next: { level: 7, question: "何を表現？", options: [
+                                                                        { text: "ラテンアメリカの魂", next: { result: "marquez" } },
+                                                                        { text: "魔術的現実", next: { result: "marquez" } }
+                                                                    ]}},
+                                                                    { text: "情熱的", next: { result: "marquez" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "コレラの時代の愛", next: { result: "marquez" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "寓話的に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        { text: "不条理", next: { result: "kafka" } },
+                                                        { text: "孤独", next: { result: "kafka" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            text: "社会と人間の関係",
+            next: {
+                level: 2,
+                question: "どのような視点で描きますか？",
+                options: [
+                    {
+                        text: "社会正義と改革",
+                        next: {
+                            level: 3,
+                            question: "何を訴えますか？",
+                            options: [
+                                {
+                                    text: "弱者への愛",
+                                    next: {
+                                        level: 4,
+                                        question: "どのように？",
+                                        options: [
+                                            {
+                                                text: "壮大な物語で",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描く？",
+                                                    options: [
+                                                        { text: "レ・ミゼラブル", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "理想主義", next: { level: 7, question: "何を信じる？", options: [
+                                                                { text: "人間愛", next: { result: "hugo" } },
+                                                                { text: "正義", next: { result: "hugo" } }
+                                                            ]}},
+                                                            { text: "情熱的", next: { result: "hugo" } }
+                                                        ]}},
+                                                        { text: "ノートルダム", next: { result: "hugo" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "道徳的に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を追求？",
+                                                    options: [
+                                                        { text: "人生の意味", next: { result: "tolstoy" } },
+                                                        { text: "真理", next: { result: "tolstoy" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "人間の尊厳",
+                                    next: {
+                                        level: 4,
+                                        question: "どう表現？",
+                                        options: [
+                                            {
+                                                text: "シンプルに",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描く？",
+                                                    options: [
+                                                        { text: "老人と海", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "男性的", next: { result: "hemingway" } },
+                                                            { text: "勇敢", next: { result: "hemingway" } }
+                                                        ]}},
+                                                        { text: "武器よさらば", next: { result: "hemingway" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "哲学的に", next: { result: "dostoevsky" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "現代社会の不条理",
+                        next: {
+                            level: 3,
+                            question: "何を描きますか？",
+                            options: [
+                                {
+                                    text: "個人の孤独",
+                                    next: {
+                                        level: 4,
+                                        question: "どのように？",
+                                        options: [
+                                            {
+                                                text: "寓話的に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        { text: "変身", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "不安", next: { result: "kafka" } },
+                                                            { text: "孤独", next: { result: "kafka" } }
+                                                        ]}},
+                                                        { text: "審判", next: { result: "kafka" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "実験的に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな手法？",
+                                                    options: [
+                                                        { text: "意識の流れ", next: { result: "joyce" } },
+                                                        { text: "モダニズム", next: { result: "joyce" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "人間の深層心理",
+                                    next: {
+                                        level: 4,
+                                        question: "何を掘り下げる？",
+                                        options: [
+                                            {
+                                                text: "罪と罰",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を求める？",
+                                                    options: [
+                                                        { text: "救済", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "哲学的", next: { result: "dostoevsky" } },
+                                                            { text: "内省的", next: { result: "dostoevsky" } }
+                                                        ]}},
+                                                        { text: "信仰", next: { result: "dostoevsky" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "人生の意味", next: { result: "tolstoy" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+};
+
+// 日本の文豪の質問ツリー（7階層）
+const japaneseWriterQuestionTree = {
+    level: 1,
+    question: "文学で最も表現したいテーマは何ですか？",
+    options: [
+        {
+            text: "人間の内面と心理",
+            next: {
+                level: 2,
+                question: "どのような内面を描きますか？",
+                options: [
+                    {
+                        text: "近代人の孤独と苦悩",
+                        next: {
+                            level: 3,
+                            question: "どのように表現しますか？",
+                            options: [
+                                {
+                                    text: "知的に内省的に",
+                                    next: {
+                                        level: 4,
+                                        question: "何を描きますか？",
+                                        options: [
+                                            {
+                                                text: "エゴイズムと孤独",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        {
+                                                            text: "こころ",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    {
+                                                                        text: "知的で内省的",
+                                                                        next: {
+                                                                            level: 7,
+                                                                            question: "何を追求？",
+                                                                            options: [
+                                                                                { text: "人間の心理", next: { result: "soseki" } },
+                                                                                { text: "近代人の苦悩", next: { result: "soseki" } }
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    { text: "誠実", next: { result: "soseki" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "吾輩は猫である", next: { result: "soseki" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "理性と感情の葛藤",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        {
+                                                            text: "舞姫",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "理性的", next: { level: 7, question: "何を重視？", options: [
+                                                                        { text: "知性", next: { result: "ogai" } },
+                                                                        { text: "品格", next: { result: "ogai" } }
+                                                                    ]}},
+                                                                    { text: "教養豊か", next: { result: "ogai" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "高瀬舟", next: { result: "ogai" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "赤裸々に告白的に",
+                                    next: {
+                                        level: 4,
+                                        question: "何を告白しますか？",
+                                        options: [
+                                            {
+                                                text: "人間失格の苦悩",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        {
+                                                            text: "人間失格",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "繊細", next: { level: 7, question: "何を演じる？", options: [
+                                                                        { text: "道化", next: { result: "dazai" } },
+                                                                        { text: "弱さ", next: { result: "dazai" } }
+                                                                    ]}},
+                                                                    { text: "自己破壊的", next: { result: "dazai" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "斜陽", next: { result: "dazai" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "仮面の下の真実",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を追求？",
+                                                    options: [
+                                                        {
+                                                            text: "美と死",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "美意識が高い", next: { level: 7, question: "何を求める？", options: [
+                                                                        { text: "完璧な美", next: { result: "mishima" } },
+                                                                        { text: "劇的な生", next: { result: "mishima" } }
+                                                                    ]}},
+                                                                    { text: "劇的", next: { result: "mishima" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "金閣寺", next: { result: "mishima" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "人間のエゴイズムと芸術",
+                        next: {
+                            level: 3,
+                            question: "どのように描きますか？",
+                            options: [
+                                {
+                                    text: "短編で鋭く",
+                                    next: {
+                                        level: 4,
+                                        question: "何を描きますか？",
+                                        options: [
+                                            {
+                                                text: "人間の醜さと美しさ",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        {
+                                                            text: "羅生門や地獄変",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "繊細", next: { level: 7, question: "何を追求？", options: [
+                                                                        { text: "完璧な文章", next: { result: "akutagawa" } },
+                                                                        { text: "芸術至上主義", next: { result: "akutagawa" } }
+                                                                    ]}},
+                                                                    { text: "神経質", next: { result: "akutagawa" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "鼻や芋粥", next: { result: "akutagawa" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "芸術家の苦悩",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描く？",
+                                                    options: [
+                                                        {
+                                                            text: "山月記",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "知的", next: { level: 7, question: "何を持つ？", options: [
+                                                                        { text: "誇り", next: { result: "nakajima" } },
+                                                                        { text: "尊厳", next: { result: "nakajima" } }
+                                                                    ]}},
+                                                                    { text: "高潔", next: { result: "nakajima" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "李陵", next: { result: "nakajima" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "美と死を劇的に",
+                                    next: {
+                                        level: 4,
+                                        question: "何を追求しますか？",
+                                        options: [
+                                            {
+                                                text: "完璧な美",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        { text: "金閣寺", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "美意識が高い", next: { result: "mishima" } },
+                                                            { text: "行動的", next: { result: "mishima" } }
+                                                        ]}},
+                                                        { text: "仮面の告白", next: { result: "mishima" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "芸術至上主義", next: { result: "akutagawa" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            text: "美と幻想の世界",
+            next: {
+                level: 2,
+                question: "どのような美を追求しますか？",
+                options: [
+                    {
+                        text: "日本の伝統美",
+                        next: {
+                            level: 3,
+                            question: "どのように表現しますか？",
+                            options: [
+                                {
+                                    text: "繊細で哀愁を込めて",
+                                    next: {
+                                        level: 4,
+                                        question: "何を描きますか？",
+                                        options: [
+                                            {
+                                                text: "雪国の美しさ",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        {
+                                                            text: "雪国",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "繊細", next: { level: 7, question: "何を感じる？", options: [
+                                                                        { text: "哀愁", next: { result: "kawabata" } },
+                                                                        { text: "虚無", next: { result: "kawabata" } }
+                                                                    ]}},
+                                                                    { text: "美意識が高い", next: { result: "kawabata" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "伊豆の踊子", next: { result: "kawabata" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "陰翳の美",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を愛しますか？",
+                                                    options: [
+                                                        {
+                                                            text: "日本の伝統",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "官能的", next: { level: 7, question: "何を描く？", options: [
+                                                                        { text: "女性美", next: { result: "tanizaki" } },
+                                                                        { text: "伝統美", next: { result: "tanizaki" } }
+                                                                    ]}},
+                                                                    { text: "耽美的", next: { result: "tanizaki" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "細雪", next: { result: "tanizaki" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "官能的に耽美的に",
+                                    next: {
+                                        level: 4,
+                                        question: "何を描きますか？",
+                                        options: [
+                                            {
+                                                text: "女性の美しさ",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        { text: "細雪", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "官能的", next: { result: "tanizaki" } },
+                                                            { text: "美意識が高い", next: { result: "tanizaki" } }
+                                                        ]}},
+                                                        { text: "春琴抄", next: { result: "tanizaki" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "妖艶な美",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな世界？",
+                                                    options: [
+                                                        { text: "幻想的", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "幻想的", next: { result: "kyoka" } },
+                                                            { text: "耽美的", next: { result: "kyoka" } }
+                                                        ]}},
+                                                        { text: "妖しい", next: { result: "kyoka" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "幻想と夢の世界",
+                        next: {
+                            level: 3,
+                            question: "どのような幻想を描きますか？",
+                            options: [
+                                {
+                                    text: "妖艶で怪奇な世界",
+                                    next: {
+                                        level: 4,
+                                        question: "何を描きますか？",
+                                        options: [
+                                            {
+                                                text: "妖怪や幻想",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        {
+                                                            text: "高野聖",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "幻想的", next: { level: 7, question: "何を愛する？", options: [
+                                                                        { text: "妖しい美", next: { result: "kyoka" } },
+                                                                        { text: "夢幻", next: { result: "kyoka" } }
+                                                                    ]}},
+                                                                    { text: "詩的", next: { result: "kyoka" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "歌行燈", next: { result: "kyoka" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "宇宙的な幻想",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描く？",
+                                                    options: [
+                                                        {
+                                                            text: "銀河鉄道",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "純粋", next: { level: 7, question: "何を持つ？", options: [
+                                                                        { text: "理想主義", next: { result: "kenji" } },
+                                                                        { text: "慈愛", next: { result: "kenji" } }
+                                                                    ]}},
+                                                                    { text: "自己犠牲的", next: { result: "kenji" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "注文の多い料理店", next: { result: "kenji" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "童話的で宇宙的",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現しますか？",
+                                        options: [
+                                            {
+                                                text: "すべての生命への愛",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        { text: "銀河鉄道の夜", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "純粋", next: { result: "kenji" } },
+                                                            { text: "理想主義", next: { result: "kenji" } }
+                                                        ]}},
+                                                        { text: "よだかの星", next: { result: "kenji" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "妖しい美",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな世界？",
+                                                    options: [
+                                                        { text: "幻想文学", next: { result: "kyoka" } },
+                                                        { text: "怪奇", next: { result: "kyoka" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            text: "人間の尊厳と挫折",
+            next: {
+                level: 2,
+                question: "どのように描きますか？",
+                options: [
+                    {
+                        text: "格調高く漢文調で",
+                        next: {
+                            level: 3,
+                            question: "何を描きますか？",
+                            options: [
+                                {
+                                    text: "芸術家の苦悩",
+                                    next: {
+                                        level: 4,
+                                        question: "どんな作品？",
+                                        options: [
+                                            {
+                                                text: "山月記",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        {
+                                                            text: "誇りと挫折",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "知的", next: { level: 7, question: "何を重視？", options: [
+                                                                        { text: "尊厳", next: { result: "nakajima" } },
+                                                                        { text: "誇り", next: { result: "nakajima" } }
+                                                                    ]}},
+                                                                    { text: "高潔", next: { result: "nakajima" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "李陵", next: { result: "nakajima" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "歴史上の人物",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな視点？",
+                                                    options: [
+                                                        { text: "理性的", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "教養豊か", next: { result: "ogai" } },
+                                                            { text: "品格がある", next: { result: "ogai" } }
+                                                        ]}},
+                                                        { text: "知的", next: { result: "nakajima" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "人間の心理",
+                                    next: {
+                                        level: 4,
+                                        question: "どう描く？",
+                                        options: [
+                                            {
+                                                text: "内省的に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描く？",
+                                                    options: [
+                                                        { text: "こころ", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "知的", next: { result: "soseki" } },
+                                                            { text: "誠実", next: { result: "soseki" } }
+                                                        ]}},
+                                                        { text: "それから", next: { result: "soseki" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "理性的に", next: { result: "ogai" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "弱さと破滅を赤裸々に",
+                        next: {
+                            level: 3,
+                            question: "何を告白しますか？",
+                            options: [
+                                {
+                                    text: "人間失格の苦悩",
+                                    next: {
+                                        level: 4,
+                                        question: "どんな作品？",
+                                        options: [
+                                            {
+                                                text: "人間失格",
+                                                next: {
+                                                    level: 5,
+                                                    question: "あなたの性格は？",
+                                                    options: [
+                                                        { text: "繊細", next: { level: 6, question: "何を演じる？", options: [
+                                                            { text: "道化", next: { result: "dazai" } },
+                                                            { text: "弱さ", next: { result: "dazai" } }
+                                                        ]}},
+                                                        { text: "自己破壊的", next: { result: "dazai" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "斜陽", next: { result: "dazai" } }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "美への執着と破滅",
+                                    next: {
+                                        level: 4,
+                                        question: "何を追求？",
+                                        options: [
+                                            {
+                                                text: "完璧な美",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        { text: "金閣寺", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "美意識が高い", next: { result: "mishima" } },
+                                                            { text: "劇的", next: { result: "mishima" } }
+                                                        ]}},
+                                                        { text: "潮騒", next: { result: "mishima" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "芸術至上主義", next: { result: "akutagawa" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+};
+
 let currentNode = null;
 let questionHistory = [];
 
@@ -5109,6 +6522,10 @@ function startTest() {
         currentNode = sculptorQuestionTree;
     } else if (currentGroup === 'musician') {
         currentNode = musicianQuestionTree;
+    } else if (currentGroup === 'writer') {
+        currentNode = writerQuestionTree;
+    } else if (currentGroup === 'japanesewriter') {
+        currentNode = japaneseWriterQuestionTree;
     }
     questionHistory = [];
     displayQuestion();
@@ -5164,6 +6581,10 @@ function showResult(artistKey) {
         artists = sculptorArtists;
     } else if (currentGroup === 'musician') {
         artists = musicianArtists;
+    } else if (currentGroup === 'writer') {
+        artists = writerArtists;
+    } else if (currentGroup === 'japanesewriter') {
+        artists = japaneseWriterArtists;
     }
     const artist = artists[artistKey];
     const resultContent = document.getElementById('result-content');
