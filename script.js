@@ -3999,41 +3999,139 @@ const ukiyoeQuestionTree = {
 
 // 印象派の質問ツリー（7階層）
 const impressionismQuestionTree = {
-
-level: 1,
-    question: "あなたが最も描きたいものは何ですか？",
+    level: 1,
+    question: "あなたが絵を描くとき、何を最も大切にしますか？",
     options: [
         {
-            text: "風景や自然の美しさ",
+            text: "光と色彩の美しさ",
             next: {
                 level: 2,
-                question: "どのような風景に惹かれますか？",
+                question: "どのような光を捉えたいですか？",
                 options: [
                     {
-                        text: "雄大で力強い自然",
+                        text: "自然の移ろいゆく光",
                         next: {
                             level: 3,
-                            question: "どのように表現したいですか？",
+                            question: "どんな風景に惹かれますか？",
                             options: [
                                 {
-                                    text: "革新的な構図で",
+                                    text: "水辺や庭園",
                                     next: {
                                         level: 4,
-                                        question: "あなたの創作姿勢は？",
+                                        question: "どのように表現したいですか？",
                                         options: [
-                                            { text: "生涯挑戦し続ける", next: { result: "hokusai" } },
-                                            { text: "独自の視点を追求", next: { result: "oei" } }
+                                            {
+                                                text: "一つのテーマを徹底的に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描きますか？",
+                                                    options: [
+                                                        {
+                                                            text: "睡蓮",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    {
+                                                                        text: "忍耐強い",
+                                                                        next: {
+                                                                            level: 7,
+                                                                            question: "何を追求？",
+                                                                            options: [
+                                                                                { text: "光の変化", next: { result: "monet" } },
+                                                                                { text: "一瞬の印象", next: { result: "monet" } }
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    { text: "粘り強い", next: { result: "monet" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "大聖堂", next: { result: "monet" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "静謐で詩的に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        {
+                                                            text: "静かな風景",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "控えめ", next: { level: 7, question: "何を大切に？", options: [
+                                                                        { text: "自然との対話", next: { result: "sisley" } },
+                                                                        { text: "静寂", next: { result: "sisley" } }
+                                                                    ]}},
+                                                                    { text: "内向的", next: { result: "sisley" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "空と水", next: { result: "sisley" } }
+                                                    ]
+                                                }
+                                            }
                                         ]
                                     }
                                 },
                                 {
-                                    text: "叙情的に",
+                                    text: "都市や農村",
                                     next: {
                                         level: 4,
-                                        question: "何を大切にしますか？",
+                                        question: "何を描きたいですか？",
                                         options: [
-                                            { text: "旅情と詩情", next: { result: "hiroshige" } },
-                                            { text: "幻想と劇的表現", next: { result: "yoshitoshi" } }
+                                            {
+                                                text: "人々の暮らしと風景",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな視点で？",
+                                                    options: [
+                                                        {
+                                                            text: "温かい眼差し",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "温厚", next: { level: 7, question: "何を大切に？", options: [
+                                                                        { text: "後進の育成", next: { result: "pissarro" } },
+                                                                        { text: "寛容さ", next: { result: "pissarro" } }
+                                                                    ]}},
+                                                                    { text: "教師気質", next: { result: "pissarro" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "農村風景", next: { result: "pissarro" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "形態の本質",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を追求？",
+                                                    options: [
+                                                        {
+                                                            text: "構造と色彩",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "孤独を愛する", next: { level: 7, question: "何を目指す？", options: [
+                                                                        { text: "絵画の真理", next: { result: "cezanne" } },
+                                                                        { text: "形態の本質", next: { result: "cezanne" } }
+                                                                    ]}},
+                                                                    { text: "求道者", next: { result: "cezanne" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "サント＝ヴィクトワール山", next: { result: "cezanne" } }
+                                                    ]
+                                                }
+                                            }
                                         ]
                                     }
                                 }
@@ -4041,30 +4139,112 @@ level: 1,
                         }
                     },
                     {
-                        text: "街道や名所",
+                        text: "人生の喜びと輝き",
                         next: {
                             level: 3,
-                            question: "どんな雰囲気を出したいですか？",
+                            question: "何を描きたいですか？",
                             options: [
                                 {
-                                    text: "旅の情緒",
+                                    text: "人々の幸せな瞬間",
                                     next: {
                                         level: 4,
-                                        question: "どちらの街道を選びますか？",
+                                        question: "どんな雰囲気を大切にしますか？",
                                         options: [
-                                            { text: "東海道", next: { result: "hiroshige" } },
-                                            { text: "木曽街道", next: { result: "eisen" } }
+                                            {
+                                                text: "陽気で華やか",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描きますか？",
+                                                    options: [
+                                                        {
+                                                            text: "舞踏会",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "楽観的", next: { level: 7, question: "何を信じる？", options: [
+                                                                        { text: "人生の喜び", next: { result: "renoir" } },
+                                                                        { text: "美しさ", next: { result: "renoir" } }
+                                                                    ]}},
+                                                                    { text: "社交的", next: { result: "renoir" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "人々の集い", next: { result: "renoir" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "親密で温かい",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        {
+                                                            text: "日常の親密さ",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "繊細", next: { level: 7, question: "何を描く？", options: [
+                                                                        { text: "女性の日常", next: { result: "morisot" } },
+                                                                        { text: "親密な瞬間", next: { result: "morisot" } }
+                                                                    ]}},
+                                                                    { text: "優雅", next: { result: "morisot" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "家族の時間", next: { result: "morisot" } }
+                                                    ]
+                                                }
+                                            }
                                         ]
                                     }
                                 },
                                 {
-                                    text: "江戸の賑わい",
+                                    text: "家族の絆",
                                     next: {
                                         level: 4,
-                                        question: "何を描きたいですか？",
+                                        question: "どのように表現しますか？",
                                         options: [
-                                            { text: "名所と風俗", next: { result: "hiroshige" } },
-                                            { text: "人々の暮らし", next: { result: "moronobu" } }
+                                            {
+                                                text: "母子の愛情を中心に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描きますか？",
+                                                    options: [
+                                                        {
+                                                            text: "母と子",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "独立心が強い", next: { level: 7, question: "何を追求？", options: [
+                                                                        { text: "女性の地位向上", next: { result: "cassatt" } },
+                                                                        { text: "家族愛", next: { result: "cassatt" } }
+                                                                    ]}},
+                                                                    { text: "意志堅固", next: { result: "cassatt" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "子供の姿", next: { result: "cassatt" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "日常の美しさを",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな場面？",
+                                                    options: [
+                                                        { text: "女性の日常", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "繊細", next: { result: "morisot" } },
+                                                            { text: "優雅", next: { result: "morisot" } }
+                                                        ]}},
+                                                        { text: "親密な瞬間", next: { result: "morisot" } }
+                                                    ]
+                                                }
+                                            }
                                         ]
                                     }
                                 }
@@ -4075,36 +4255,114 @@ level: 1,
             }
         },
         {
-            text: "人物の魅力",
+            text: "内面の感情や真実",
             next: {
                 level: 2,
-                question: "どのような人物を描きたいですか？",
+                question: "どのような真実を追求しますか？",
                 options: [
                     {
-                        text: "美人や女性",
+                        text: "動きと瞬間の真実",
                         next: {
                             level: 3,
-                            question: "どのような美しさを表現したいですか？",
+                            question: "何を観察したいですか？",
                             options: [
                                 {
-                                    text: "内面まで表現する繊細な美",
+                                    text: "人間の動き",
                                     next: {
                                         level: 4,
-                                        question: "どんなスタイルで？",
+                                        question: "どんな姿勢で臨みますか？",
                                         options: [
-                                            { text: "心理描写を重視", next: { result: "utamaro" } },
-                                            { text: "優美で詩的に", next: { result: "harunobu" } }
+                                            {
+                                                text: "完璧主義で厳格に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描きますか？",
+                                                    options: [
+                                                        {
+                                                            text: "バレエダンサー",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "観察眼が鋭い", next: { level: 7, question: "何を追求？", options: [
+                                                                        { text: "動きの瞬間", next: { result: "degas" } },
+                                                                        { text: "完璧な構図", next: { result: "degas" } }
+                                                                    ]}},
+                                                                    { text: "孤独を好む", next: { result: "degas" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "競馬", next: { result: "degas" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "情熱的に全力で",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        {
+                                                            text: "激しい感情",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "情熱的", next: { level: 7, question: "何に捧げる？", options: [
+                                                                        { text: "芸術", next: { result: "vangogh" } },
+                                                                        { text: "全て", next: { result: "vangogh" } }
+                                                                    ]}},
+                                                                    { text: "純粋", next: { result: "vangogh" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "星月夜", next: { result: "vangogh" } }
+                                                    ]
+                                                }
+                                            }
                                         ]
                                     }
                                 },
                                 {
-                                    text: "理想的なプロポーション",
+                                    text: "芸術の本質",
                                     next: {
                                         level: 4,
-                                        question: "どのような美人像？",
+                                        question: "どこに真実を求めますか？",
                                         options: [
-                                            { text: "健康的で優雅", next: { result: "kiyonaga" } },
-                                            { text: "妖艶で官能的", next: { result: "eisen" } }
+                                            {
+                                                text: "形態と構造の中に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を追求？",
+                                                    options: [
+                                                        { text: "絵画の本質", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "孤独な求道者", next: { level: 7, question: "何を目指す？", options: [
+                                                                { text: "絵画の真理", next: { result: "cezanne" } },
+                                                                { text: "形態の本質", next: { result: "cezanne" } }
+                                                            ]}},
+                                                            { text: "頑固", next: { result: "cezanne" } }
+                                                        ]}},
+                                                        { text: "色彩と形態", next: { result: "cezanne" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "原始的な美の中に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どこへ行きますか？",
+                                                    options: [
+                                                        { text: "タヒチ", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "冒険心旺盛", next: { level: 7, question: "何を求める？", options: [
+                                                                { text: "原始的な美", next: { result: "gauguin" } },
+                                                                { text: "自由", next: { result: "gauguin" } }
+                                                            ]}},
+                                                            { text: "反骨精神", next: { result: "gauguin" } }
+                                                        ]}},
+                                                        { text: "文明を離れて", next: { result: "gauguin" } }
+                                                    ]
+                                                }
+                                            }
                                         ]
                                     }
                                 }
@@ -4112,30 +4370,85 @@ level: 1,
                         }
                     },
                     {
-                        text: "役者や個性的な人物",
+                        text: "魂の叫びと情熱",
                         next: {
                             level: 3,
-                            question: "何を重視しますか？",
+                            question: "何を表現したいですか？",
                             options: [
                                 {
-                                    text: "人物の本質や個性",
+                                    text: "激しい感情",
                                     next: {
                                         level: 4,
-                                        question: "どのように捉えますか？",
+                                        question: "どのように生きたいですか？",
                                         options: [
-                                            { text: "鋭く大胆に", next: { result: "sharaku" } },
-                                            { text: "ユーモアを込めて", next: { result: "kuniyoshi" } }
+                                            {
+                                                text: "芸術に全てを捧げて",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描きますか？",
+                                                    options: [
+                                                        { text: "ひまわり", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "情熱的", next: { level: 7, question: "何を追求？", options: [
+                                                                { text: "生命の輝き", next: { result: "vangogh" } },
+                                                                { text: "感情の爆発", next: { result: "vangogh" } }
+                                                            ]}},
+                                                            { text: "感情豊か", next: { result: "vangogh" } }
+                                                        ]}},
+                                                        { text: "星空", next: { result: "vangogh" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "自由を求めて",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どこへ？",
+                                                    options: [
+                                                        { text: "南の島", next: { level: 6, question: "何を追求？", options: [
+                                                            { text: "原始の美", next: { result: "gauguin" } },
+                                                            { text: "象徴性", next: { result: "gauguin" } }
+                                                        ]}},
+                                                        { text: "原始の世界", next: { result: "gauguin" } }
+                                                    ]
+                                                }
+                                            }
                                         ]
                                     }
                                 },
                                 {
-                                    text: "物語性やドラマ",
+                                    text: "象徴と神秘",
                                     next: {
                                         level: 4,
-                                        question: "どんなテーマ？",
+                                        question: "どこに美を見出しますか？",
                                         options: [
-                                            { text: "武者や怪談", next: { result: "kuniyoshi" } },
-                                            { text: "幻想と月", next: { result: "yoshitoshi" } }
+                                            {
+                                                text: "異文化の中に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を求める？",
+                                                    options: [
+                                                        { text: "原始的な美", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "冒険心旺盛", next: { result: "gauguin" } },
+                                                            { text: "反骨精神", next: { result: "gauguin" } }
+                                                        ]}},
+                                                        { text: "象徴性", next: { result: "gauguin" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "孤独な探求の中に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を追求？",
+                                                    options: [
+                                                        { text: "形態の本質", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "孤独を愛する", next: { result: "cezanne" } },
+                                                            { text: "求道者", next: { result: "cezanne" } }
+                                                        ]}},
+                                                        { text: "絵画の真理", next: { result: "cezanne" } }
+                                                    ]
+                                                }
+                                            }
                                         ]
                                     }
                                 }
