@@ -34,6 +34,10 @@ const groupInfo = {
     sculptor: {
         title: "―世界の彫刻家編―",
         description: "いくつかの質問に答えて、あなたに似た彫刻家を見つけましょう！"
+    },
+    musician: {
+        title: "―クラシック音楽家編―",
+        description: "いくつかの質問に答えて、あなたに似た音楽家を見つけましょう！"
     }
 };
 
@@ -272,6 +276,120 @@ const sculptorArtists = {
         ],
         evaluation: "東西の文化を融合させた彫刻家。彫刻、庭園、家具デザインなど多岐にわたる作品を制作しました。",
         personality: "国際的で多才。東洋と西洋の架け橋となる、柔軟で創造的な性格です。"
+    }
+};
+
+// クラシック音楽家データ
+const musicianArtists = {
+    bach: {
+        name: "ヨハン・セバスティアン・バッハ",
+        icon: "🎼",
+        masterpiece: "代表作：『マタイ受難曲』『ブランデンブルク協奏曲』",
+        works: [
+            { title: "マタイ受難曲", searchQuery: "Bach St Matthew Passion" },
+            { title: "ブランデンブルク協奏曲", searchQuery: "Bach Brandenburg Concertos" }
+        ],
+        evaluation: "音楽の父と呼ばれる。対位法の極致を示し、バロック音楽の集大成を成し遂げた巨匠です。",
+        personality: "厳格で敬虔。神への信仰と音楽への献身を貫く、真摯で職人気質な性格です。"
+    },
+    mozart: {
+        name: "ヴォルフガング・アマデウス・モーツァルト",
+        icon: "🎹",
+        masterpiece: "代表作：『レクイエム』『フィガロの結婚』",
+        works: [
+            { title: "レクイエム", searchQuery: "Mozart Requiem" },
+            { title: "フィガロの結婚", searchQuery: "Mozart The Marriage of Figaro" }
+        ],
+        evaluation: "天才の代名詞。あらゆるジャンルで完璧な作品を残し、古典派音楽の頂点を極めました。",
+        personality: "天真爛漫で才能豊か。遊び心と深い感性を併せ持つ、永遠の神童です。"
+    },
+    beethoven: {
+        name: "ルートヴィヒ・ヴァン・ベートーヴェン",
+        icon: "🎵",
+        masterpiece: "代表作：『交響曲第9番』『運命』",
+        works: [
+            { title: "交響曲第9番", searchQuery: "Beethoven Symphony No 9" },
+            { title: "交響曲第5番 運命", searchQuery: "Beethoven Symphony No 5" }
+        ],
+        evaluation: "楽聖と称される。聴覚を失いながらも不屈の精神で傑作を生み、ロマン派への道を開きました。",
+        personality: "情熱的で反骨精神がある。運命に立ち向かう強い意志を持つ、革命家気質です。"
+    },
+    schubert: {
+        name: "フランツ・シューベルト",
+        icon: "🎶",
+        masterpiece: "代表作：『冬の旅』『未完成交響曲』",
+        works: [
+            { title: "冬の旅", searchQuery: "Schubert Winterreise" },
+            { title: "未完成交響曲", searchQuery: "Schubert Unfinished Symphony" }
+        ],
+        evaluation: "歌曲の王。600曲以上の歌曲を残し、詩と音楽の完璧な融合を実現しました。",
+        personality: "繊細で内向的。孤独と憂愁を抱えながらも、美しい旋律を紡ぐ詩人の魂を持ちます。"
+    },
+    chopin: {
+        name: "フレデリック・ショパン",
+        icon: "🎹",
+        masterpiece: "代表作：『ノクターン』『バラード第1番』",
+        works: [
+            { title: "ノクターン第2番", searchQuery: "Chopin Nocturne Op 9 No 2" },
+            { title: "バラード第1番", searchQuery: "Chopin Ballade No 1" }
+        ],
+        evaluation: "ピアノの詩人。ピアノ音楽の可能性を極限まで追求し、ロマン派ピアノ音楽の頂点を築きました。",
+        personality: "繊細で憂愁に満ちる。祖国ポーランドへの愛と、詩的な感性を持つ貴族的な性格です。"
+    },
+    brahms: {
+        name: "ヨハネス・ブラームス",
+        icon: "🎼",
+        masterpiece: "代表作：『交響曲第1番』『ドイツ・レクイエム』",
+        works: [
+            { title: "交響曲第1番", searchQuery: "Brahms Symphony No 1" },
+            { title: "ドイツ・レクイエム", searchQuery: "Brahms German Requiem" }
+        ],
+        evaluation: "古典とロマンの架け橋。バッハ、ベートーヴェンの伝統を受け継ぎ、堅固な構成美を追求しました。",
+        personality: "真面目で職人気質。伝統を重んじながらも、深い情熱を内に秘める誠実な性格です。"
+    },
+    tchaikovsky: {
+        name: "ピョートル・チャイコフスキー",
+        icon: "🎭",
+        masterpiece: "代表作：『白鳥の湖』『悲愴交響曲』",
+        works: [
+            { title: "白鳥の湖", searchQuery: "Tchaikovsky Swan Lake" },
+            { title: "交響曲第6番 悲愴", searchQuery: "Tchaikovsky Symphony No 6 Pathetique" }
+        ],
+        evaluation: "ロシアを代表する作曲家。情熱的で劇的な旋律美で、世界中の聴衆を魅了しました。",
+        personality: "感情豊かで繊細。深い憂愁と情熱を併せ持つ、ロマンティックな性格です。"
+    },
+    wagner: {
+        name: "リヒャルト・ワーグナー",
+        icon: "⚔️",
+        masterpiece: "代表作：『ニーベルングの指環』『トリスタンとイゾルデ』",
+        works: [
+            { title: "ニーベルングの指環", searchQuery: "Wagner Ring Cycle" },
+            { title: "トリスタンとイゾルデ", searchQuery: "Wagner Tristan und Isolde" }
+        ],
+        evaluation: "楽劇の革命家。総合芸術作品を目指し、音楽史に革命的な影響を与えました。",
+        personality: "野心的で革命的。強烈な個性と自己主張を持つ、カリスマ的な性格です。"
+    },
+    debussy: {
+        name: "クロード・ドビュッシー",
+        icon: "🌊",
+        masterpiece: "代表作：『海』『月の光』",
+        works: [
+            { title: "海", searchQuery: "Debussy La Mer" },
+            { title: "月の光", searchQuery: "Debussy Clair de Lune" }
+        ],
+        evaluation: "印象主義音楽の創始者。色彩豊かな和声と音色で、新しい音楽の世界を切り開きました。",
+        personality: "繊細で革新的。伝統に縛られず、独自の美学を追求する自由な精神の持ち主です。"
+    },
+    mahler: {
+        name: "グスタフ・マーラー",
+        icon: "🎺",
+        masterpiece: "代表作：『交響曲第5番』『大地の歌』",
+        works: [
+            { title: "交響曲第5番", searchQuery: "Mahler Symphony No 5" },
+            { title: "大地の歌", searchQuery: "Mahler Das Lied von der Erde" }
+        ],
+        evaluation: "後期ロマン派の巨匠。壮大なスケールと深い哲学性で、交響曲の可能性を極限まで拡大しました。",
+        personality: "哲学的で内省的。生と死、存在の意味を問い続ける、深い精神性を持つ性格です。"
     }
 };
 
@@ -4461,6 +4579,500 @@ const impressionismQuestionTree = {
     ]
 };
 
+// クラシック音楽家の質問ツリー（7階層）
+const musicianQuestionTree = {
+    level: 1,
+    question: "音楽で最も表現したいものは何ですか？",
+    options: [
+        {
+            text: "神への信仰と精神性",
+            next: {
+                level: 2,
+                question: "どのような精神性を追求しますか？",
+                options: [
+                    {
+                        text: "厳格で敬虔な信仰",
+                        next: {
+                            level: 3,
+                            question: "どのように表現しますか？",
+                            options: [
+                                {
+                                    text: "対位法と構造美",
+                                    next: {
+                                        level: 4,
+                                        question: "何を重視しますか？",
+                                        options: [
+                                            {
+                                                text: "完璧な構造",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品を書きますか？",
+                                                    options: [
+                                                        {
+                                                            text: "受難曲やカンタータ",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    {
+                                                                        text: "厳格で職人気質",
+                                                                        next: {
+                                                                            level: 7,
+                                                                            question: "何に献身しますか？",
+                                                                            options: [
+                                                                                { text: "神と音楽", next: { result: "bach" } },
+                                                                                { text: "伝統と革新", next: { result: "bach" } }
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    { text: "敬虔", next: { result: "bach" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "フーガ", next: { result: "bach" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "伝統の継承",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を継承しますか？",
+                                                    options: [
+                                                        {
+                                                            text: "バッハの伝統",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "真面目", next: { level: 7, question: "何を追求？", options: [
+                                                                        { text: "構成美", next: { result: "brahms" } },
+                                                                        { text: "深い情熱", next: { result: "brahms" } }
+                                                                    ]}},
+                                                                    { text: "誠実", next: { result: "brahms" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "古典の形式", next: { result: "brahms" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "哲学的な深さ",
+                                    next: {
+                                        level: 4,
+                                        question: "何を問いますか？",
+                                        options: [
+                                            {
+                                                text: "生と死の意味",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どのように表現？",
+                                                    options: [
+                                                        {
+                                                            text: "壮大な交響曲で",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "哲学的", next: { level: 7, question: "何を追求？", options: [
+                                                                        { text: "存在の意味", next: { result: "mahler" } },
+                                                                        { text: "精神性", next: { result: "mahler" } }
+                                                                    ]}},
+                                                                    { text: "内省的", next: { result: "mahler" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "歌曲で", next: { result: "mahler" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "慰めと救済", next: { result: "brahms" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "神話と伝説の世界",
+                        next: {
+                            level: 3,
+                            question: "どのような世界を描きますか？",
+                            options: [
+                                {
+                                    text: "北欧神話の壮大な叙事詩",
+                                    next: {
+                                        level: 4,
+                                        question: "何を目指しますか？",
+                                        options: [
+                                            {
+                                                text: "総合芸術作品",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        {
+                                                            text: "楽劇",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "野心的", next: { level: 7, question: "何を追求？", options: [
+                                                                        { text: "革命", next: { result: "wagner" } },
+                                                                        { text: "総合芸術", next: { result: "wagner" } }
+                                                                    ]}},
+                                                                    { text: "カリスマ的", next: { result: "wagner" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "指環", next: { result: "wagner" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "革命的な和声", next: { result: "wagner" } }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "ロシアの民話とバレエ",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現？",
+                                        options: [
+                                            {
+                                                text: "劇的な物語",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        { text: "バレエ音楽", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "情熱的", next: { result: "tchaikovsky" } },
+                                                            { text: "ロマンティック", next: { result: "tchaikovsky" } }
+                                                        ]}},
+                                                        { text: "交響曲", next: { result: "tchaikovsky" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "美しい旋律", next: { result: "tchaikovsky" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            text: "人間の感情と内面",
+            next: {
+                level: 2,
+                question: "どのような感情を表現したいですか？",
+                options: [
+                    {
+                        text: "喜びと明るさ",
+                        next: {
+                            level: 3,
+                            question: "どのように表現しますか？",
+                            options: [
+                                {
+                                    text: "完璧な美しさで",
+                                    next: {
+                                        level: 4,
+                                        question: "何を大切にしますか？",
+                                        options: [
+                                            {
+                                                text: "天才的な才能",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品を書きますか？",
+                                                    options: [
+                                                        {
+                                                            text: "オペラや協奏曲",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "天真爛漫", next: { level: 7, question: "何を追求？", options: [
+                                                                        { text: "完璧な美", next: { result: "mozart" } },
+                                                                        { text: "遊び心", next: { result: "mozart" } }
+                                                                    ]}},
+                                                                    { text: "才能豊か", next: { result: "mozart" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "レクイエム", next: { result: "mozart" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "バランスと調和", next: { result: "mozart" } }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "情熱的に",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現？",
+                                        options: [
+                                            {
+                                                text: "ロシアの魂",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        { text: "バレエ", next: { result: "tchaikovsky" } },
+                                                        { text: "悲愴", next: { result: "tchaikovsky" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "運命への挑戦", next: { result: "beethoven" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "憂愁と孤独",
+                        next: {
+                            level: 3,
+                            question: "どのように表現しますか？",
+                            options: [
+                                {
+                                    text: "詩的な歌曲で",
+                                    next: {
+                                        level: 4,
+                                        question: "何を歌いますか？",
+                                        options: [
+                                            {
+                                                text: "冬の旅や死と乙女",
+                                                next: {
+                                                    level: 5,
+                                                    question: "あなたの性格は？",
+                                                    options: [
+                                                        {
+                                                            text: "繊細で内向的",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "何を表現？",
+                                                                options: [
+                                                                    { text: "孤独", next: { level: 7, question: "どんな作品？", options: [
+                                                                        { text: "歌曲", next: { result: "schubert" } },
+                                                                        { text: "未完成", next: { result: "schubert" } }
+                                                                    ]}},
+                                                                    { text: "憂愁", next: { result: "schubert" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "詩人の魂", next: { result: "schubert" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "祖国への想い",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな楽器で？",
+                                                    options: [
+                                                        { text: "ピアノ", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "繊細", next: { result: "chopin" } },
+                                                            { text: "貴族的", next: { result: "chopin" } }
+                                                        ]}},
+                                                        { text: "オーケストラ", next: { result: "tchaikovsky" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "ピアノの詩で",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現しますか？",
+                                        options: [
+                                            {
+                                                text: "夜想曲やバラード",
+                                                next: {
+                                                    level: 5,
+                                                    question: "あなたの性格は？",
+                                                    options: [
+                                                        {
+                                                            text: "繊細で憂愁",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "何を想う？",
+                                                                options: [
+                                                                    { text: "祖国ポーランド", next: { level: 7, question: "どんな作品？", options: [
+                                                                        { text: "ノクターン", next: { result: "chopin" } },
+                                                                        { text: "バラード", next: { result: "chopin" } }
+                                                                    ]}},
+                                                                    { text: "失われた故郷", next: { result: "chopin" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "詩的", next: { result: "chopin" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "マズルカやポロネーズ", next: { result: "chopin" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            text: "革新と新しい表現",
+            next: {
+                level: 2,
+                question: "どのような革新を目指しますか？",
+                options: [
+                    {
+                        text: "運命に立ち向かう力",
+                        next: {
+                            level: 3,
+                            question: "どのように表現しますか？",
+                            options: [
+                                {
+                                    text: "力強い交響曲で",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現しますか？",
+                                        options: [
+                                            {
+                                                text: "苦悩から歓喜へ",
+                                                next: {
+                                                    level: 5,
+                                                    question: "あなたの性格は？",
+                                                    options: [
+                                                        {
+                                                            text: "不屈の精神",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "何と戦いますか？",
+                                                                options: [
+                                                                    { text: "運命", next: { level: 7, question: "どんな作品？", options: [
+                                                                        { text: "第九", next: { result: "beethoven" } },
+                                                                        { text: "運命", next: { result: "beethoven" } }
+                                                                    ]}},
+                                                                    { text: "聴覚喪失", next: { result: "beethoven" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "革命的", next: { result: "beethoven" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "英雄的な精神", next: { result: "beethoven" } }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "哲学的な問いで",
+                                    next: {
+                                        level: 4,
+                                        question: "何を問いますか？",
+                                        options: [
+                                            {
+                                                text: "存在の意味",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        { text: "巨大な交響曲", next: { result: "mahler" } },
+                                                        { text: "大地の歌", next: { result: "mahler" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "人間の尊厳", next: { result: "beethoven" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "新しい音の世界",
+                        next: {
+                            level: 3,
+                            question: "どのような音楽を創造しますか？",
+                            options: [
+                                {
+                                    text: "印象主義的な色彩",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現しますか？",
+                                        options: [
+                                            {
+                                                text: "水や光の揺らぎ",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        {
+                                                            text: "海や月の光",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "繊細", next: { level: 7, question: "何を追求？", options: [
+                                                                        { text: "新しい和声", next: { result: "debussy" } },
+                                                                        { text: "色彩的音色", next: { result: "debussy" } }
+                                                                    ]}},
+                                                                    { text: "革新的", next: { result: "debussy" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "牧神の午後", next: { result: "debussy" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "自由な形式", next: { result: "debussy" } }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "楽劇の革命",
+                                    next: {
+                                        level: 4,
+                                        question: "何を目指しますか？",
+                                        options: [
+                                            {
+                                                text: "総合芸術",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        { text: "指環やトリスタン", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "野心的", next: { result: "wagner" } },
+                                                            { text: "革命的", next: { result: "wagner" } }
+                                                        ]}},
+                                                        { text: "無限旋律", next: { result: "wagner" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "和声の革新", next: { result: "wagner" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+};
+
 let currentNode = null;
 let questionHistory = [];
 
@@ -4495,6 +5107,8 @@ function startTest() {
         currentNode = contemporaryQuestionTree;
     } else if (currentGroup === 'sculptor') {
         currentNode = sculptorQuestionTree;
+    } else if (currentGroup === 'musician') {
+        currentNode = musicianQuestionTree;
     }
     questionHistory = [];
     displayQuestion();
@@ -4548,6 +5162,8 @@ function showResult(artistKey) {
         artists = contemporaryArtists;
     } else if (currentGroup === 'sculptor') {
         artists = sculptorArtists;
+    } else if (currentGroup === 'musician') {
+        artists = musicianArtists;
     }
     const artist = artists[artistKey];
     const resultContent = document.getElementById('result-content');
