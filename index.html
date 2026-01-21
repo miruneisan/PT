@@ -8,11 +8,34 @@
 </head>
 <body>
     <div class="container">
-        <div id="start-screen" class="screen active">
+        <div id="group-select-screen" class="screen active">
             <h1>あなたはどんな画家タイプ？</h1>
-            <h2>―日本画家編―</h2>
-            <p>いくつかの質問に答えて、あなたに似た日本画家を見つけましょう！</p>
+            <p class="subtitle">診断したい画家グループを選んでください</p>
+            <div class="group-buttons">
+                <button onclick="selectGroup('japanese')" class="group-btn">
+                    <span class="group-icon">🎨</span>
+                    <span class="group-name">日本画家編</span>
+                    <span class="group-desc">横山大観、上村松園など</span>
+                </button>
+                <button onclick="selectGroup('impressionism')" class="group-btn">
+                    <span class="group-icon">🌅</span>
+                    <span class="group-name">印象派編</span>
+                    <span class="group-desc">モネ、ルノワールなど</span>
+                </button>
+                <button onclick="selectGroup('ukiyoe')" class="group-btn">
+                    <span class="group-icon">🌊</span>
+                    <span class="group-name">浮世絵編</span>
+                    <span class="group-desc">葛飾北斎、歌川広重など</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="start-screen" class="screen">
+            <h1>あなたはどんな画家タイプ？</h1>
+            <h2 id="group-title">―日本画家編―</h2>
+            <p id="group-description">いくつかの質問に答えて、あなたに似た画家を見つけましょう！</p>
             <button onclick="startTest()" class="btn-primary">診断を始める</button>
+            <button onclick="backToGroupSelect()" class="btn-secondary">グループ選択に戻る</button>
         </div>
 
         <div id="question-screen" class="screen">
@@ -29,6 +52,7 @@
             <h1>診断結果</h1>
             <div id="result-content"></div>
             <button onclick="restartTest()" class="btn-primary">もう一度診断する</button>
+            <button onclick="backToGroupSelect()" class="btn-secondary">別のグループを診断する</button>
         </div>
     </div>
 
