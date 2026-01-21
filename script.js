@@ -22,6 +22,18 @@ const groupInfo = {
     artmovement: {
         title: "―絵画グループ編―",
         description: "いくつかの質問に答えて、あなたに合う絵画グループを見つけましょう！"
+    },
+    avantgarde: {
+        title: "―アバンギャルド編―",
+        description: "いくつかの質問に答えて、あなたに似た前衛芸術家を見つけましょう！"
+    },
+    contemporary: {
+        title: "―コンテンポラリー編―",
+        description: "いくつかの質問に答えて、あなたに似た現代アーティストを見つけましょう！"
+    },
+    sculptor: {
+        title: "―世界の彫刻家編―",
+        description: "いくつかの質問に答えて、あなたに似た彫刻家を見つけましょう！"
     }
 };
 
@@ -146,6 +158,348 @@ const japaneseArtists = {
         ],
         evaluation: "歴史画の第一人者として、日本の歴史や古典文学を格調高く描きました。",
         personality: "堅実で歴史を重んじる。正義感が強く、理想を追求する真摯な性格です。"
+    }
+};
+
+// 世界の彫刻家データ
+const sculptorArtists = {
+    unkei: {
+        name: "運慶",
+        icon: "🗿",
+        masterpiece: "代表作：『金剛力士像』『無著菩薩立像』",
+        works: [
+            { title: "金剛力士像", searchQuery: "運慶 金剛力士像" },
+            { title: "無著菩薩立像", searchQuery: "運慶 無著菩薩" }
+        ],
+        evaluation: "鎌倉時代を代表する仏師。写実的で力強い表現で、日本彫刻史に革命をもたらしました。",
+        personality: "力強く革新的。伝統を守りながらも新しい表現を追求する、実力派の職人です。"
+    },
+    michelangelo: {
+        name: "ミケランジェロ",
+        icon: "🎨",
+        masterpiece: "代表作：『ダヴィデ像』『ピエタ』",
+        works: [
+            { title: "ダヴィデ像", searchQuery: "Michelangelo David" },
+            { title: "ピエタ", searchQuery: "Michelangelo Pieta" }
+        ],
+        evaluation: "ルネサンスの巨匠。人体の完璧な美を大理石に刻み、彫刻の最高峰を極めました。",
+        personality: "完璧主義で情熱的。神に近づこうとする、崇高な芸術家魂の持ち主です。"
+    },
+    bernini: {
+        name: "ジャン・ロレンツォ・ベルニーニ",
+        icon: "✨",
+        masterpiece: "代表作：『聖テレジアの法悦』『アポロとダフネ』",
+        works: [
+            { title: "聖テレジアの法悦", searchQuery: "Bernini Ecstasy of Saint Teresa" },
+            { title: "アポロとダフネ", searchQuery: "Bernini Apollo and Daphne" }
+        ],
+        evaluation: "バロック彫刻の巨匠。大理石に生命を吹き込み、劇的で動的な表現を実現しました。",
+        personality: "劇的で情熱的。石を生きているかのように表現する、天才的な技術の持ち主です。"
+    },
+    rodin: {
+        name: "オーギュスト・ロダン",
+        icon: "🤔",
+        masterpiece: "代表作：『考える人』『地獄の門』",
+        works: [
+            { title: "考える人", searchQuery: "Rodin The Thinker" },
+            { title: "地獄の門", searchQuery: "Rodin The Gates of Hell" }
+        ],
+        evaluation: "近代彫刻の父。人間の内面と感情を、力強く表現的な形態で表現しました。",
+        personality: "思索的で情熱的。人間の本質を追求する、深い洞察力を持つ芸術家です。"
+    },
+    asakura: {
+        name: "朝倉文夫",
+        icon: "🐱",
+        masterpiece: "代表作：『墓守』『時の流れ』",
+        works: [
+            { title: "墓守", searchQuery: "朝倉文夫 墓守" },
+            { title: "時の流れ", searchQuery: "朝倉文夫 時の流れ" }
+        ],
+        evaluation: "日本近代彫刻の巨匠。写実的な技法で人物や動物を生き生きと表現しました。",
+        personality: "写実的で観察眼が鋭い。生命の本質を捉える、真摯な彫刻家です。"
+    },
+    hirakushi: {
+        name: "平櫛田中",
+        icon: "👴",
+        masterpiece: "代表作：『転生』『鏡獅子』",
+        works: [
+            { title: "転生", searchQuery: "平櫛田中 転生" },
+            { title: "鏡獅子", searchQuery: "平櫛田中 鏡獅子" }
+        ],
+        evaluation: "107歳まで制作を続けた彫刻家。木彫で人間の精神性を深く表現しました。",
+        personality: "長寿で向上心旺盛。生涯学び続ける、不屈の精神の持ち主です。"
+    },
+    takamura: {
+        name: "高村光太郎",
+        icon: "✍️",
+        masterpiece: "代表作：『手』『乙女の像』",
+        works: [
+            { title: "手", searchQuery: "高村光太郎 手" },
+            { title: "乙女の像", searchQuery: "高村光太郎 乙女の像" }
+        ],
+        evaluation: "詩人でもある彫刻家。西洋彫刻の技法を学び、日本の近代彫刻に新風を吹き込みました。",
+        personality: "詩的で繊細。芸術と人生を一体化させる、ロマンティックな性格です。"
+    },
+    brancusi: {
+        name: "コンスタンティン・ブランクーシ",
+        icon: "🥚",
+        masterpiece: "代表作：『空間の鳥』『接吻』",
+        works: [
+            { title: "空間の鳥", searchQuery: "Brancusi Bird in Space" },
+            { title: "接吻", searchQuery: "Brancusi The Kiss" }
+        ],
+        evaluation: "抽象彫刻の先駆者。形態を極限まで単純化し、本質を追求しました。",
+        personality: "純粋主義者で瞑想的。形の本質を追求する、哲学的な彫刻家です。"
+    },
+    giacometti: {
+        name: "アルベルト・ジャコメッティ",
+        icon: "🚶",
+        masterpiece: "代表作：『歩く男』『犬』",
+        works: [
+            { title: "歩く男", searchQuery: "Giacometti Walking Man" },
+            { title: "犬", searchQuery: "Giacometti Dog" }
+        ],
+        evaluation: "実存主義を体現する彫刻家。極端に細長い人物像で、孤独と存在の不安を表現しました。",
+        personality: "実存的で孤独。人間存在の本質を問い続ける、哲学的な性格です。"
+    },
+    noguchi: {
+        name: "イサム・ノグチ",
+        icon: "🪨",
+        masterpiece: "代表作：『あかり』『ブラック・スライド・マントラ』",
+        works: [
+            { title: "あかり", searchQuery: "イサム・ノグチ あかり" },
+            { title: "ブラック・スライド・マントラ", searchQuery: "Isamu Noguchi Black Slide Mantra" }
+        ],
+        evaluation: "東西の文化を融合させた彫刻家。彫刻、庭園、家具デザインなど多岐にわたる作品を制作しました。",
+        personality: "国際的で多才。東洋と西洋の架け橋となる、柔軟で創造的な性格です。"
+    }
+};
+
+// コンテンポラリーアーティストデータ
+const contemporaryArtists = {
+    warhol: {
+        name: "アンディ・ウォーホル",
+        icon: "🥫",
+        masterpiece: "代表作：『キャンベル・スープ缶』『マリリン・モンロー』",
+        works: [
+            { title: "キャンベル・スープ缶", searchQuery: "Andy Warhol Campbell's Soup Cans" },
+            { title: "マリリン・モンロー", searchQuery: "Andy Warhol Marilyn Monroe" }
+        ],
+        evaluation: "ポップアートの旗手。大量消費社会とセレブリティ文化を芸術に昇華し、現代美術の方向性を決定づけました。",
+        personality: "クールで商業的。芸術とビジネスの境界を曖昧にする、時代の寵児です。"
+    },
+    basquiat: {
+        name: "ジャン＝ミシェル・バスキア",
+        icon: "👑",
+        masterpiece: "代表作：『無題（頭蓋骨）』『ハリウッド・アフリカ人』",
+        works: [
+            { title: "無題（頭蓋骨）", searchQuery: "Basquiat Untitled Skull" },
+            { title: "ハリウッド・アフリカ人", searchQuery: "Basquiat Hollywood Africans" }
+        ],
+        evaluation: "ストリートアートから美術界へ。人種問題や社会批判を、原始的で力強い表現で描きました。",
+        personality: "反骨精神があり情熱的。ストリートの感性と知性を併せ持つ、カリスマ的存在です。"
+    },
+    koons: {
+        name: "ジェフ・クーンズ",
+        icon: "🎈",
+        masterpiece: "代表作：『バルーン・ドッグ』『マイケル・ジャクソンとバブルス』",
+        works: [
+            { title: "バルーン・ドッグ", searchQuery: "Jeff Koons Balloon Dog" },
+            { title: "マイケル・ジャクソンとバブルス", searchQuery: "Jeff Koons Michael Jackson and Bubbles" }
+        ],
+        evaluation: "キッチュと高級芸術の融合。大衆文化を巨大で豪華な作品に変換し、現代美術市場を席巻しました。",
+        personality: "商業的で野心的。大衆文化を愛し、成功を追求する楽観主義者です。"
+    },
+    hirst: {
+        name: "ダミアン・ハースト",
+        icon: "💀",
+        masterpiece: "代表作：『生者の心における死の物理的不可能性』『神の愛のために』",
+        works: [
+            { title: "生者の心における死の物理的不可能性", searchQuery: "Damien Hirst The Physical Impossibility of Death" },
+            { title: "神の愛のために", searchQuery: "Damien Hirst For the Love of God" }
+        ],
+        evaluation: "YBA（ヤング・ブリティッシュ・アーティスト）の代表格。死と生、芸術と商業の境界を挑発的に問います。",
+        personality: "挑発的で商業的。死をテーマに、センセーショナルな作品を生み出す起業家的アーティストです。"
+    },
+    banksy: {
+        name: "バンクシー",
+        icon: "🎨",
+        masterpiece: "代表作：『風船と少女』『花束を投げる人』",
+        works: [
+            { title: "風船と少女", searchQuery: "Banksy Girl with Balloon" },
+            { title: "花束を投げる人", searchQuery: "Banksy Flower Thrower" }
+        ],
+        evaluation: "匿名のストリートアーティスト。社会批判と反体制のメッセージを、ユーモアと皮肉を込めて表現します。",
+        personality: "反体制で神秘的。匿名性を保ちながら、鋭い社会批判を行う現代の革命家です。"
+    },
+    richter: {
+        name: "ゲルハルト・リヒター",
+        icon: "🖼️",
+        masterpiece: "代表作：『ビルケナウ』『アブストラクト・ペインティング』",
+        works: [
+            { title: "ビルケナウ", searchQuery: "Gerhard Richter Birkenau" },
+            { title: "アブストラクト・ペインティング", searchQuery: "Gerhard Richter Abstract Painting" }
+        ],
+        evaluation: "現代絵画の巨匠。具象と抽象を自在に行き来し、絵画の可能性を探求し続けています。",
+        personality: "知的で実験的。絵画の本質を問い続ける、真摯な探求者です。"
+    },
+    kusama_contemporary: {
+        name: "草間彌生",
+        icon: "🔴",
+        masterpiece: "代表作：『無限の鏡の部屋』『かぼちゃ』",
+        works: [
+            { title: "無限の鏡の部屋", searchQuery: "草間彌生 無限の鏡の部屋" },
+            { title: "かぼちゃ", searchQuery: "草間彌生 かぼちゃ" }
+        ],
+        evaluation: "世界的に最も成功した日本人現代アーティスト。水玉と無限をテーマに、独自の幻想世界を創造しました。",
+        personality: "強迫観念を芸術に昇華する。内面の幻覚と向き合い続ける、強靭な精神力の持ち主です。"
+    },
+    murakami: {
+        name: "村上隆",
+        icon: "🌸",
+        masterpiece: "代表作：『お花』『DOB君』",
+        works: [
+            { title: "お花", searchQuery: "村上隆 お花" },
+            { title: "DOB君", searchQuery: "村上隆 DOB君" }
+        ],
+        evaluation: "スーパーフラット理論を提唱。日本のサブカルチャーと現代美術を融合させ、国際的な成功を収めました。",
+        personality: "戦略的で商業的。オタク文化を芸術に昇華させる、ビジネスセンスのあるアーティストです。"
+    },
+    nara: {
+        name: "奈良美智",
+        icon: "👧",
+        masterpiece: "代表作：『あおもり犬』『Knife Behind Back』",
+        works: [
+            { title: "あおもり犬", searchQuery: "奈良美智 あおもり犬" },
+            { title: "Knife Behind Back", searchQuery: "奈良美智 Knife Behind Back" }
+        ],
+        evaluation: "反抗的な少女像で知られる。孤独や反抗心を、可愛らしくも不穏な子供の姿で表現しました。",
+        personality: "内向的で反抗的。孤独と向き合い、純粋な感情を表現する、繊細なアーティストです。"
+    },
+    hockney: {
+        name: "デイヴィッド・ホックニー",
+        icon: "🏊",
+        masterpiece: "代表作：『大きな水しぶき』『ピーター・シュレジンジャーの肖像』",
+        works: [
+            { title: "大きな水しぶき", searchQuery: "David Hockney A Bigger Splash" },
+            { title: "ピーター・シュレジンジャーの肖像", searchQuery: "David Hockney Portrait of an Artist" }
+        ],
+        evaluation: "ポップアートの巨匠。カリフォルニアの光と色彩を、鮮やかで楽観的な作品に表現しました。",
+        personality: "楽観的で開放的。光と色彩を愛し、人生の喜びを描く、陽気な性格です。"
+    }
+};
+
+// アバンギャルド画家データ
+const avantgardeArtists = {
+    picasso: {
+        name: "パブロ・ピカソ",
+        icon: "🎭",
+        masterpiece: "代表作：『ゲルニカ』『アヴィニョンの娘たち』",
+        works: [
+            { title: "ゲルニカ", searchQuery: "Picasso Guernica" },
+            { title: "アヴィニョンの娘たち", searchQuery: "Picasso Les Demoiselles d'Avignon" }
+        ],
+        evaluation: "20世紀最大の巨匠。キュビズムを創始し、絵画の概念を根本から変革しました。",
+        personality: "天才的で多才。常に革新を求め、既成概念を打ち破る破壊と創造の人です。"
+    },
+    matisse: {
+        name: "アンリ・マティス",
+        icon: "✂️",
+        masterpiece: "代表作：『ダンス』『赤いアトリエ』",
+        works: [
+            { title: "ダンス", searchQuery: "Matisse The Dance" },
+            { title: "赤いアトリエ", searchQuery: "Matisse The Red Studio" }
+        ],
+        evaluation: "フォービスムの巨匠。鮮やかな色彩と大胆な構図で、生命の喜びを表現しました。",
+        personality: "楽観的で生命力にあふれる。色彩の喜びを追求する、明るく前向きな性格です。"
+    },
+    duchamp: {
+        name: "マルセル・デュシャン",
+        icon: "🚽",
+        masterpiece: "代表作：『泉』『階段を降りる裸体 No.2』",
+        works: [
+            { title: "泉", searchQuery: "Marcel Duchamp Fountain" },
+            { title: "階段を降りる裸体", searchQuery: "Marcel Duchamp Nude Descending a Staircase" }
+        ],
+        evaluation: "現代美術の父。レディメイドの概念で芸術の定義を根本から問い直しました。",
+        personality: "知的で挑発的。既成概念に挑戦し、芸術の本質を問う革命家です。"
+    },
+    chirico: {
+        name: "ジョルジョ・デ・キリコ",
+        icon: "🏛️",
+        masterpiece: "代表作：『通りの神秘と憂鬱』『予言者の報酬』",
+        works: [
+            { title: "通りの神秘と憂鬱", searchQuery: "De Chirico Mystery and Melancholy of a Street" },
+            { title: "予言者の報酬", searchQuery: "De Chirico The Soothsayer's Recompense" }
+        ],
+        evaluation: "形而上絵画の創始者。不可解な空間と静寂が支配する、謎めいた世界を描きました。",
+        personality: "哲学的で神秘的。夢と現実の境界を探求する、知的で謎めいた性格です。"
+    },
+    dali: {
+        name: "サルバドール・ダリ",
+        icon: "⏰",
+        masterpiece: "代表作：『記憶の固執』『内乱の予感』",
+        works: [
+            { title: "記憶の固執", searchQuery: "Dali The Persistence of Memory" },
+            { title: "内乱の予感", searchQuery: "Dali Soft Construction with Boiled Beans" }
+        ],
+        evaluation: "シュルレアリスムの巨匠。精緻な技法で無意識の世界を描き、奇想天外な作品を生み出しました。",
+        personality: "奇抜で演劇的。自己顕示欲が強く、常識を超越した天才肌の性格です。"
+    },
+    kandinsky: {
+        name: "ワシリー・カンディンスキー",
+        icon: "🎵",
+        masterpiece: "代表作：『コンポジションVII』『即興28』",
+        works: [
+            { title: "コンポジションVII", searchQuery: "Kandinsky Composition VII" },
+            { title: "即興28", searchQuery: "Kandinsky Improvisation 28" }
+        ],
+        evaluation: "抽象絵画の創始者。音楽と絵画の融合を目指し、色彩と形態の純粋な表現を追求しました。",
+        personality: "理論的で精神的。芸術の本質を探求する、哲学者のような深い思索家です。"
+    },
+    malevich: {
+        name: "カジミール・マレーヴィチ",
+        icon: "⬛",
+        masterpiece: "代表作：『黒の正方形』『白の上の白』",
+        works: [
+            { title: "黒の正方形", searchQuery: "Malevich Black Square" },
+            { title: "白の上の白", searchQuery: "Malevich White on White" }
+        ],
+        evaluation: "シュプレマティスムの創始者。究極の抽象を追求し、純粋な幾何学形態に到達しました。",
+        personality: "ストイックで純粋主義者。芸術の究極を追求する、妥協を許さない性格です。"
+    },
+    klee: {
+        name: "パウル・クレー",
+        icon: "🌟",
+        masterpiece: "代表作：『セネキオ』『パルナッソス山へ』",
+        works: [
+            { title: "セネキオ", searchQuery: "Paul Klee Senecio" },
+            { title: "パルナッソス山へ", searchQuery: "Paul Klee Ad Parnassum" }
+        ],
+        evaluation: "詩的で音楽的な抽象画を描いた画家。子供のような純粋な視点と、深い思索が融合した作品を制作しました。",
+        personality: "詩的で繊細。音楽を愛し、子供のような純粋さと哲学的深さを併せ持つ性格です。"
+    },
+    okamoto: {
+        name: "岡本太郎",
+        icon: "🌞",
+        masterpiece: "代表作：『太陽の塔』『明日の神話』",
+        works: [
+            { title: "太陽の塔", searchQuery: "岡本太郎 太陽の塔" },
+            { title: "明日の神話", searchQuery: "岡本太郎 明日の神話" }
+        ],
+        evaluation: "日本の前衛芸術家。「芸術は爆発だ」の言葉通り、強烈なエネルギーと原始的な力を表現しました。",
+        personality: "情熱的で反骨精神がある。既成概念を破壊し、生命力を爆発させる革命家です。"
+    },
+    kusama: {
+        name: "草間彌生",
+        icon: "🔴",
+        masterpiece: "代表作：『無限の網』『かぼちゃ』",
+        works: [
+            { title: "無限の網", searchQuery: "草間彌生 無限の網" },
+            { title: "かぼちゃ", searchQuery: "草間彌生 かぼちゃ" }
+        ],
+        evaluation: "現代美術を代表する日本人アーティスト。水玉模様と無限の反復で、独自の幻想世界を創造しました。",
+        personality: "強迫観念を芸術に昇華する。内面の幻覚と向き合い続ける、強靭な精神力の持ち主です。"
     }
 };
 
@@ -923,6 +1277,1314 @@ const japaneseQuestionTree = {
                                         options: [
                                             { text: "装飾的で華麗に", next: { result: "kimura" } },
                                             { text: "詩的で繊細に", next: { result: "hishida" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+};
+
+// 世界の彫刻家の質問ツリー（7階層）
+const sculptorQuestionTree = {
+    level: 1,
+    question: "彫刻で何を表現したいですか？",
+    options: [
+        {
+            text: "人間の肉体と美",
+            next: {
+                level: 2,
+                question: "どのような美を追求しますか？",
+                options: [
+                    {
+                        text: "完璧な理想美",
+                        next: {
+                            level: 3,
+                            question: "どの時代の美？",
+                            options: [
+                                {
+                                    text: "古代ギリシャ・ローマ",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現しますか？",
+                                        options: [
+                                            {
+                                                text: "神に近い完璧さ",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな題材？",
+                                                    options: [
+                                                        {
+                                                            text: "英雄や聖書",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    {
+                                                                        text: "完璧主義",
+                                                                        next: {
+                                                                            level: 7,
+                                                                            question: "何を目指す？",
+                                                                            options: [
+                                                                                { text: "神の領域", next: { result: "michelangelo" } },
+                                                                                { text: "劇的な表現", next: { result: "bernini" } }
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    { text: "情熱的", next: { result: "michelangelo" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "神話", next: { result: "bernini" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "動きと劇的表現",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どのように？",
+                                                    options: [
+                                                        { text: "石に生命を", next: { level: 6, question: "何を表現？", options: [
+                                                            { text: "法悦の瞬間", next: { result: "bernini" } },
+                                                            { text: "変身の瞬間", next: { result: "bernini" } }
+                                                        ]}},
+                                                        { text: "バロック的に", next: { result: "bernini" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "日本の伝統美",
+                                    next: {
+                                        level: 4,
+                                        question: "何を彫りますか？",
+                                        options: [
+                                            {
+                                                text: "仏像",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんなスタイル？",
+                                                    options: [
+                                                        {
+                                                            text: "力強く写実的",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "何を表現？",
+                                                                options: [
+                                                                    { text: "金剛力士", next: { level: 7, question: "あなたの姿勢は？", options: [
+                                                                        { text: "革新的", next: { result: "unkei" } },
+                                                                        { text: "伝統的", next: { result: "unkei" } }
+                                                                    ]}},
+                                                                    { text: "菩薩", next: { result: "unkei" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "精神性", next: { result: "hirakushi" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "人物や動物",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どのように？",
+                                                    options: [
+                                                        { text: "写実的に", next: { result: "asakura" } },
+                                                        { text: "木彫で", next: { result: "hirakushi" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "写実的な生命感",
+                        next: {
+                            level: 3,
+                            question: "何を彫りますか？",
+                            options: [
+                                {
+                                    text: "人物",
+                                    next: {
+                                        level: 4,
+                                        question: "どんな人物？",
+                                        options: [
+                                            {
+                                                text: "日本人",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな技法？",
+                                                    options: [
+                                                        {
+                                                            text: "塑像",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "何を表現？",
+                                                                options: [
+                                                                    { text: "生命の本質", next: { result: "asakura" } },
+                                                                    { text: "時の流れ", next: { result: "asakura" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "木彫", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "長寿で向上心", next: { result: "hirakushi" } },
+                                                            { text: "詩的", next: { result: "takamura" } }
+                                                        ]}}
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "西洋人",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        { text: "思索", next: { result: "rodin" } },
+                                                        { text: "完璧な美", next: { result: "michelangelo" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "動物",
+                                    next: {
+                                        level: 4,
+                                        question: "どのように？",
+                                        options: [
+                                            { text: "生き生きと", next: { level: 5, question: "何を彫る？", options: [
+                                                { text: "猫", next: { result: "asakura" } },
+                                                { text: "獅子", next: { result: "hirakushi" } }
+                                            ]}},
+                                            { text: "抽象的に", next: { result: "brancusi" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            text: "人間の内面と感情",
+            next: {
+                level: 2,
+                question: "どのような内面を表現しますか？",
+                options: [
+                    {
+                        text: "思索と苦悩",
+                        next: {
+                            level: 3,
+                            question: "どのように表現？",
+                            options: [
+                                {
+                                    text: "力強く表現的に",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現しますか？",
+                                        options: [
+                                            {
+                                                text: "人間の本質",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        {
+                                                            text: "考える人",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "思索的", next: { level: 7, question: "何を追求？", options: [
+                                                                        { text: "人間の深層", next: { result: "rodin" } },
+                                                                        { text: "情熱", next: { result: "rodin" } }
+                                                                    ]}},
+                                                                    { text: "情熱的", next: { result: "rodin" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "地獄の門", next: { result: "rodin" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "詩的な感情",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな題材？",
+                                                    options: [
+                                                        { text: "手", next: { result: "takamura" } },
+                                                        { text: "乙女", next: { result: "takamura" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "繊細に詩的に",
+                                    next: {
+                                        level: 4,
+                                        question: "あなたは詩人でもある？",
+                                        options: [
+                                            { text: "はい", next: { level: 5, question: "何を表現？", options: [
+                                                { text: "愛と美", next: { result: "takamura" } },
+                                                { text: "人生", next: { result: "takamura" } }
+                                            ]}},
+                                            { text: "いいえ", next: { result: "asakura" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "孤独と存在",
+                        next: {
+                            level: 3,
+                            question: "どのように表現？",
+                            options: [
+                                {
+                                    text: "極端に細長く",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現しますか？",
+                                        options: [
+                                            {
+                                                text: "存在の不安",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        {
+                                                            text: "歩く男",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "実存的", next: { level: 7, question: "何を問う？", options: [
+                                                                        { text: "人間存在", next: { result: "giacometti" } },
+                                                                        { text: "孤独", next: { result: "giacometti" } }
+                                                                    ]}},
+                                                                    { text: "哲学的", next: { result: "giacometti" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "犬", next: { result: "giacometti" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "孤独な人間", next: { result: "giacometti" } }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "抽象的に",
+                                    next: {
+                                        level: 4,
+                                        question: "どこまで抽象化？",
+                                        options: [
+                                            { text: "本質まで", next: { result: "brancusi" } },
+                                            { text: "有機的に", next: { result: "noguchi" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            text: "形態の本質と抽象",
+            next: {
+                level: 2,
+                question: "どのように抽象化しますか？",
+                options: [
+                    {
+                        text: "極限まで単純化",
+                        next: {
+                            level: 3,
+                            question: "何を追求しますか？",
+                            options: [
+                                {
+                                    text: "形の本質",
+                                    next: {
+                                        level: 4,
+                                        question: "どんな形？",
+                                        options: [
+                                            {
+                                                text: "卵や鳥",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        {
+                                                            text: "飛翔",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "純粋主義", next: { level: 7, question: "何を目指す？", options: [
+                                                                        { text: "形の純粋性", next: { result: "brancusi" } },
+                                                                        { text: "瞑想的美", next: { result: "brancusi" } }
+                                                                    ]}},
+                                                                    { text: "瞑想的", next: { result: "brancusi" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "接吻", next: { result: "brancusi" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "有機的形態", next: { result: "noguchi" } }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "東西の融合",
+                                    next: {
+                                        level: 4,
+                                        question: "何を作りますか？",
+                                        options: [
+                                            {
+                                                text: "彫刻と庭園",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんなスタイル？",
+                                                    options: [
+                                                        {
+                                                            text: "有機的",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "国際的", next: { level: 7, question: "何を作る？", options: [
+                                                                        { text: "あかり", next: { result: "noguchi" } },
+                                                                        { text: "庭園", next: { result: "noguchi" } }
+                                                                    ]}},
+                                                                    { text: "多才", next: { result: "noguchi" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "石と光", next: { result: "noguchi" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "家具デザイン", next: { result: "noguchi" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "有機的な形態",
+                        next: {
+                            level: 3,
+                            question: "何を表現？",
+                            options: [
+                                {
+                                    text: "自然との調和",
+                                    next: {
+                                        level: 4,
+                                        question: "どんな作品？",
+                                        options: [
+                                            {
+                                                text: "庭園彫刻",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どこの文化？",
+                                                    options: [
+                                                        { text: "東西融合", next: { result: "noguchi" } },
+                                                        { text: "日本", next: { result: "asakura" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "抽象彫刻", next: { result: "brancusi" } }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "生命の形",
+                                    next: {
+                                        level: 4,
+                                        question: "どのように？",
+                                        options: [
+                                            { text: "単純化して", next: { result: "brancusi" } },
+                                            { text: "写実的に", next: { result: "asakura" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+};
+
+// コンテンポラリーの質問ツリー（7階層）
+const contemporaryQuestionTree = {
+    level: 1,
+    question: "現代社会において、あなたが芸術で表現したいことは何ですか？",
+    options: [
+        {
+            text: "大衆文化とポップカルチャー",
+            next: {
+                level: 2,
+                question: "どのような大衆文化に惹かれますか？",
+                options: [
+                    {
+                        text: "消費社会とセレブリティ",
+                        next: {
+                            level: 3,
+                            question: "どのように表現しますか？",
+                            options: [
+                                {
+                                    text: "複製と反復",
+                                    next: {
+                                        level: 4,
+                                        question: "何を複製しますか？",
+                                        options: [
+                                            {
+                                                text: "商品や有名人",
+                                                next: {
+                                                    level: 5,
+                                                    question: "あなたの姿勢は？",
+                                                    options: [
+                                                        {
+                                                            text: "クールで商業的",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "何を目指しますか？",
+                                                                options: [
+                                                                    {
+                                                                        text: "芸術とビジネスの融合",
+                                                                        next: {
+                                                                            level: 7,
+                                                                            question: "どんな作品？",
+                                                                            options: [
+                                                                                { text: "スープ缶やマリリン", next: { result: "warhol" } },
+                                                                                { text: "バルーン・ドッグ", next: { result: "koons" } }
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    { text: "大衆文化の賛美", next: { result: "warhol" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "楽観的", next: { result: "koons" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "キッチュなもの",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どのように？",
+                                                    options: [
+                                                        { text: "巨大で豪華に", next: { level: 6, question: "何を表現？", options: [
+                                                            { text: "大衆文化の美", next: { result: "koons" } },
+                                                            { text: "商業主義", next: { result: "hirst" } }
+                                                        ]}},
+                                                        { text: "鮮やかに", next: { result: "hockney" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "光と色彩",
+                                    next: {
+                                        level: 4,
+                                        question: "どんな光？",
+                                        options: [
+                                            {
+                                                text: "カリフォルニアの光",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描きますか？",
+                                                    options: [
+                                                        { text: "プールと水しぶき", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "楽観的", next: { result: "hockney" } },
+                                                            { text: "開放的", next: { result: "hockney" } }
+                                                        ]}},
+                                                        { text: "人物", next: { result: "hockney" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "抽象的な光", next: { result: "richter" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "サブカルチャーとストリート",
+                        next: {
+                            level: 3,
+                            question: "どのようなサブカルチャー？",
+                            options: [
+                                {
+                                    text: "ストリートアート",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現しますか？",
+                                        options: [
+                                            {
+                                                text: "社会批判",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どのように？",
+                                                    options: [
+                                                        {
+                                                            text: "匿名で挑発的に",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "どんなメッセージ？",
+                                                                options: [
+                                                                    { text: "反体制と皮肉", next: { level: 7, question: "あなたの姿勢は？", options: [
+                                                                        { text: "神秘的", next: { result: "banksy" } },
+                                                                        { text: "ユーモラス", next: { result: "banksy" } }
+                                                                    ]}},
+                                                                    { text: "反戦", next: { result: "banksy" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "直接的に", next: { result: "basquiat" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "人種と社会",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんなスタイル？",
+                                                    options: [
+                                                        { text: "原始的で力強い", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "反骨精神", next: { result: "basquiat" } },
+                                                            { text: "カリスマ的", next: { result: "basquiat" } }
+                                                        ]}},
+                                                        { text: "グラフィティ", next: { result: "basquiat" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "オタク文化",
+                                    next: {
+                                        level: 4,
+                                        question: "どのように表現？",
+                                        options: [
+                                            {
+                                                text: "スーパーフラット",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描きますか？",
+                                                    options: [
+                                                        { text: "お花やDOB君", next: { level: 6, question: "あなたの姿勢は？", options: [
+                                                            { text: "戦略的", next: { result: "murakami" } },
+                                                            { text: "商業的", next: { result: "murakami" } }
+                                                        ]}},
+                                                        { text: "アニメ的", next: { result: "murakami" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "反抗的な子供",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        { text: "孤独と反抗", next: { result: "nara" } },
+                                                        { text: "純粋な感情", next: { result: "nara" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            text: "死と生、存在の本質",
+            next: {
+                level: 2,
+                question: "どのように表現しますか？",
+                options: [
+                    {
+                        text: "センセーショナルに",
+                        next: {
+                            level: 3,
+                            question: "何を使いますか？",
+                            options: [
+                                {
+                                    text: "動物や頭蓋骨",
+                                    next: {
+                                        level: 4,
+                                        question: "どのように？",
+                                        options: [
+                                            {
+                                                text: "ホルマリン漬け",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を問いますか？",
+                                                    options: [
+                                                        {
+                                                            text: "死の物理的不可能性",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "挑発的", next: { level: 7, question: "何を追求？", options: [
+                                                                        { text: "死と生", next: { result: "hirst" } },
+                                                                        { text: "商業主義", next: { result: "hirst" } }
+                                                                    ]}},
+                                                                    { text: "起業家的", next: { result: "hirst" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "芸術の価値", next: { result: "hirst" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "ダイヤモンド",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        { text: "死と富", next: { result: "hirst" } },
+                                                        { text: "価値の問い", next: { result: "hirst" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "頭蓋骨や王冠",
+                                    next: {
+                                        level: 4,
+                                        question: "どんなスタイル？",
+                                        options: [
+                                            { text: "原始的", next: { result: "basquiat" } },
+                                            { text: "グラフィティ", next: { result: "basquiat" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "抽象的に",
+                        next: {
+                            level: 3,
+                            question: "どのようなアプローチ？",
+                            options: [
+                                {
+                                    text: "具象と抽象の往来",
+                                    next: {
+                                        level: 4,
+                                        question: "何を探求しますか？",
+                                        options: [
+                                            {
+                                                text: "絵画の本質",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな方法？",
+                                                    options: [
+                                                        { text: "写真をぼかす", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "知的", next: { result: "richter" } },
+                                                            { text: "実験的", next: { result: "richter" } }
+                                                        ]}},
+                                                        { text: "抽象絵画", next: { result: "richter" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "歴史と記憶", next: { result: "richter" } }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "反復とパターン",
+                                    next: {
+                                        level: 4,
+                                        question: "何を反復？",
+                                        options: [
+                                            {
+                                                text: "水玉模様",
+                                                next: {
+                                                    level: 5,
+                                                    question: "なぜ？",
+                                                    options: [
+                                                        { text: "強迫観念", next: { result: "kusama_contemporary" } },
+                                                        { text: "無限の表現", next: { result: "kusama_contemporary" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "商品イメージ", next: { result: "warhol" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            text: "内面世界と感情",
+            next: {
+                level: 2,
+                question: "どのような内面を表現しますか？",
+                options: [
+                    {
+                        text: "孤独と反抗",
+                        next: {
+                            level: 3,
+                            question: "どのように表現？",
+                            options: [
+                                {
+                                    text: "子供の姿で",
+                                    next: {
+                                        level: 4,
+                                        question: "どんな子供？",
+                                        options: [
+                                            {
+                                                text: "反抗的な少女",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を持っていますか？",
+                                                    options: [
+                                                        { text: "ナイフ", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "内向的", next: { result: "nara" } },
+                                                            { text: "反抗的", next: { result: "nara" } }
+                                                        ]}},
+                                                        { text: "犬", next: { result: "nara" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "純粋な子供", next: { result: "nara" } }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "ストリートで",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現？",
+                                        options: [
+                                            { text: "人種問題", next: { result: "basquiat" } },
+                                            { text: "社会批判", next: { result: "banksy" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "幻覚と無限",
+                        next: {
+                            level: 3,
+                            question: "どのように表現？",
+                            options: [
+                                {
+                                    text: "水玉と鏡",
+                                    next: {
+                                        level: 4,
+                                        question: "何を作りますか？",
+                                        options: [
+                                            {
+                                                text: "無限の鏡の部屋",
+                                                next: {
+                                                    level: 5,
+                                                    question: "あなたの性格は？",
+                                                    options: [
+                                                        { text: "強靭な精神力", next: { level: 6, question: "何を追求？", options: [
+                                                            { text: "無限", next: { result: "kusama_contemporary" } },
+                                                            { text: "幻覚の芸術化", next: { result: "kusama_contemporary" } }
+                                                        ]}},
+                                                        { text: "世界的成功", next: { result: "kusama_contemporary" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "かぼちゃ", next: { result: "kusama_contemporary" } }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "抽象的に",
+                                    next: {
+                                        level: 4,
+                                        question: "どんな方法？",
+                                        options: [
+                                            { text: "具象と抽象", next: { result: "richter" } },
+                                            { text: "平面的", next: { result: "murakami" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+};
+
+// アバンギャルドの質問ツリー（7階層）
+const avantgardeQuestionTree = {
+    level: 1,
+    question: "あなたが芸術で最も破壊したいものは何ですか？",
+    options: [
+        {
+            text: "既成の形態と表現方法",
+            next: {
+                level: 2,
+                question: "どのように破壊しますか？",
+                options: [
+                    {
+                        text: "形態を分解・再構成する",
+                        next: {
+                            level: 3,
+                            question: "何を目指しますか？",
+                            options: [
+                                {
+                                    text: "多視点の同時表現",
+                                    next: {
+                                        level: 4,
+                                        question: "どんなアプローチ？",
+                                        options: [
+                                            {
+                                                text: "幾何学的に分析",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を重視しますか？",
+                                                    options: [
+                                                        {
+                                                            text: "革新的な構図",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    {
+                                                                        text: "天才的で多才",
+                                                                        next: {
+                                                                            level: 7,
+                                                                            question: "何を表現したい？",
+                                                                            options: [
+                                                                                { text: "戦争の悲劇", next: { result: "picasso" } },
+                                                                                { text: "生命の喜び", next: { result: "matisse" } }
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    { text: "知的で挑発的", next: { result: "duchamp" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "色彩の解放", next: { result: "matisse" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "動きを表現",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どのように？",
+                                                    options: [
+                                                        { text: "連続する動き", next: { result: "duchamp" } },
+                                                        { text: "多面的に", next: { result: "picasso" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "完全な抽象化",
+                                    next: {
+                                        level: 4,
+                                        question: "どこまで抽象化しますか？",
+                                        options: [
+                                            {
+                                                text: "究極の純粋形態",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を追求しますか？",
+                                                    options: [
+                                                        {
+                                                            text: "幾何学的純粋性",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "どんな形態？",
+                                                                options: [
+                                                                    { text: "正方形の究極", next: { level: 7, question: "あなたの姿勢は？", options: [
+                                                                        { text: "ストイックで純粋", next: { result: "malevich" } },
+                                                                        { text: "理論的で精神的", next: { result: "kandinsky" } }
+                                                                    ]}},
+                                                                    { text: "音楽的構成", next: { result: "kandinsky" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "詩的な抽象", next: { result: "klee" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "音楽的・詩的抽象",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現しますか？",
+                                                    options: [
+                                                        { text: "音楽と色彩", next: { level: 6, question: "どんなスタイル？", options: [
+                                                            { text: "理論的", next: { result: "kandinsky" } },
+                                                            { text: "詩的", next: { result: "klee" } }
+                                                        ]}},
+                                                        { text: "子供のような純粋さ", next: { result: "klee" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "色彩を解放する",
+                        next: {
+                            level: 3,
+                            question: "どのような色彩表現？",
+                            options: [
+                                {
+                                    text: "鮮烈で大胆な色彩",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現しますか？",
+                                        options: [
+                                            {
+                                                text: "生命の喜び",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな方法で？",
+                                                    options: [
+                                                        { text: "大胆な構図", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "楽観的", next: { result: "matisse" } },
+                                                            { text: "情熱的", next: { result: "okamoto" } }
+                                                        ]}},
+                                                        { text: "切り絵", next: { result: "matisse" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "原始的な力",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どのように？",
+                                                    options: [
+                                                        { text: "爆発的に", next: { result: "okamoto" } },
+                                                        { text: "反復的に", next: { result: "kusama" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "反復とパターン",
+                                    next: {
+                                        level: 4,
+                                        question: "何を反復しますか？",
+                                        options: [
+                                            {
+                                                text: "水玉や網目",
+                                                next: {
+                                                    level: 5,
+                                                    question: "なぜ反復しますか？",
+                                                    options: [
+                                                        { text: "強迫観念から", next: { level: 6, question: "何を表現？", options: [
+                                                            { text: "無限の世界", next: { result: "kusama" } },
+                                                            { text: "内面の幻覚", next: { result: "kusama" } }
+                                                        ]}},
+                                                        { text: "音楽的リズム", next: { result: "kandinsky" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "幾何学形態", next: { result: "malevich" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            text: "芸術の概念そのもの",
+            next: {
+                level: 2,
+                question: "どのように概念を破壊しますか？",
+                options: [
+                    {
+                        text: "日常品を芸術にする",
+                        next: {
+                            level: 3,
+                            question: "何を使いますか？",
+                            options: [
+                                {
+                                    text: "既製品（レディメイド）",
+                                    next: {
+                                        level: 4,
+                                        question: "何を問いますか？",
+                                        options: [
+                                            {
+                                                text: "芸術とは何か",
+                                                next: {
+                                                    level: 5,
+                                                    question: "あなたの姿勢は？",
+                                                    options: [
+                                                        {
+                                                            text: "挑発的",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "どんな方法？",
+                                                                options: [
+                                                                    { text: "便器を展示", next: { result: "duchamp" } },
+                                                                    { text: "奇抜なパフォーマンス", next: { result: "dali" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "知的", next: { result: "duchamp" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "動きと時間", next: { result: "duchamp" } }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "日常の素材",
+                                    next: {
+                                        level: 4,
+                                        question: "どう使いますか？",
+                                        options: [
+                                            { text: "大胆に組み合わせる", next: { result: "okamoto" } },
+                                            { text: "反復して配置", next: { result: "kusama" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "夢と無意識を表現する",
+                        next: {
+                            level: 3,
+                            question: "どのような世界を描きますか？",
+                            options: [
+                                {
+                                    text: "超現実的な夢の世界",
+                                    next: {
+                                        level: 4,
+                                        question: "どんなスタイル？",
+                                        options: [
+                                            {
+                                                text: "精緻で写実的",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描きますか？",
+                                                    options: [
+                                                        {
+                                                            text: "溶ける時計",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "奇抜で演劇的", next: { level: 7, question: "何を追求？", options: [
+                                                                        { text: "無意識の世界", next: { result: "dali" } },
+                                                                        { text: "自己顕示", next: { result: "dali" } }
+                                                                    ]}},
+                                                                    { text: "哲学的", next: { result: "chirico" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "形而上的空間", next: { result: "chirico" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "神秘的で静寂",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        { text: "謎めいた広場", next: { level: 6, question: "どんな雰囲気？", options: [
+                                                            { text: "不可解な静寂", next: { result: "chirico" } },
+                                                            { text: "哲学的問い", next: { result: "chirico" } }
+                                                        ]}},
+                                                        { text: "詩的な世界", next: { result: "klee" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "内面の幻覚",
+                                    next: {
+                                        level: 4,
+                                        question: "どのように表現？",
+                                        options: [
+                                            {
+                                                text: "反復とパターン",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を反復？",
+                                                    options: [
+                                                        { text: "水玉模様", next: { level: 6, question: "なぜ？", options: [
+                                                            { text: "強迫観念", next: { result: "kusama" } },
+                                                            { text: "無限の表現", next: { result: "kusama" } }
+                                                        ]}},
+                                                        { text: "幾何学", next: { result: "malevich" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "原始的な力", next: { result: "okamoto" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            text: "文化と伝統の境界",
+            next: {
+                level: 2,
+                question: "どのように境界を破壊しますか？",
+                options: [
+                    {
+                        text: "東洋と西洋の融合",
+                        next: {
+                            level: 3,
+                            question: "何を表現しますか？",
+                            options: [
+                                {
+                                    text: "原始的な生命力",
+                                    next: {
+                                        level: 4,
+                                        question: "どのように？",
+                                        options: [
+                                            {
+                                                text: "爆発的に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を大切にしますか？",
+                                                    options: [
+                                                        {
+                                                            text: "反骨精神",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "どんな作品？",
+                                                                options: [
+                                                                    { text: "太陽のような力", next: { result: "okamoto" } },
+                                                                    { text: "神話的世界", next: { result: "okamoto" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "色彩の喜び", next: { result: "matisse" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "幾何学的に", next: { result: "picasso" } }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "現代的な感覚",
+                                    next: {
+                                        level: 4,
+                                        question: "何を追求？",
+                                        options: [
+                                            {
+                                                text: "無限の世界",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どのように表現？",
+                                                    options: [
+                                                        { text: "水玉と反復", next: { result: "kusama" } },
+                                                        { text: "抽象的に", next: { result: "kandinsky" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "革新的構図", next: { result: "picasso" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "理性と感情の境界",
+                        next: {
+                            level: 3,
+                            question: "何を重視しますか？",
+                            options: [
+                                {
+                                    text: "理論と体系",
+                                    next: {
+                                        level: 4,
+                                        question: "どんなアプローチ？",
+                                        options: [
+                                            {
+                                                text: "音楽的理論",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を追求？",
+                                                    options: [
+                                                        { text: "色彩と音楽", next: { result: "kandinsky" } },
+                                                        { text: "純粋形態", next: { result: "malevich" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "知的挑発", next: { result: "duchamp" } }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "直感と感情",
+                                    next: {
+                                        level: 4,
+                                        question: "どう表現？",
+                                        options: [
+                                            { text: "爆発的に", next: { result: "okamoto" } },
+                                            { text: "詩的に", next: { result: "klee" } }
                                         ]
                                     }
                                 }
@@ -1897,13 +3559,19 @@ function startTest() {
         currentNode = worldQuestionTree;
     } else if (currentGroup === 'artmovement') {
         currentNode = artMovementQuestionTree;
+    } else if (currentGroup === 'avantgarde') {
+        currentNode = avantgardeQuestionTree;
+    } else if (currentGroup === 'contemporary') {
+        currentNode = contemporaryQuestionTree;
+    } else if (currentGroup === 'sculptor') {
+        currentNode = sculptorQuestionTree;
     }
     questionHistory = [];
     displayQuestion();
 }
 
 function displayQuestion() {
-    const maxLevel = (currentGroup === 'world' || currentGroup === 'artmovement') ? 7 : 5;
+    const maxLevel = (currentGroup === 'world' || currentGroup === 'artmovement' || currentGroup === 'avantgarde' || currentGroup === 'contemporary' || currentGroup === 'sculptor') ? 7 : 5;
     const progress = (currentNode.level / maxLevel) * 100;
     document.getElementById('progress').style.width = progress + '%';
     
@@ -1944,6 +3612,12 @@ function showResult(artistKey) {
         artists = worldArtists;
     } else if (currentGroup === 'artmovement') {
         artists = artMovements;
+    } else if (currentGroup === 'avantgarde') {
+        artists = avantgardeArtists;
+    } else if (currentGroup === 'contemporary') {
+        artists = contemporaryArtists;
+    } else if (currentGroup === 'sculptor') {
+        artists = sculptorArtists;
     }
     const artist = artists[artistKey];
     const resultContent = document.getElementById('result-content');
