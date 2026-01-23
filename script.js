@@ -23,6 +23,10 @@ const groupInfo = {
         title: "―絵画グループ編―",
         description: "いくつかの質問に答えて、あなたに合う絵画グループを見つけましょう！"
     },
+    surrealism: {
+        title: "―シュールレアリスム編―",
+        description: "いくつかの質問に答えて、あなたに似たシュールレアリスト画家を見つけましょう！"
+    },
     avantgarde: {
         title: "―アバンギャルド編―",
         description: "いくつかの質問に答えて、あなたに似た前衛芸術家を見つけましょう！"
@@ -1038,6 +1042,120 @@ const artMovements = {
             { name: "酒井抱一", searchQuery: "酒井抱一 作品" }
         ],
         detailLink: "https://ja.wikipedia.org/wiki/琳派"
+    }
+};
+
+// シュールレアリスム画家データ
+const surrealismArtists = {
+    dali: {
+        name: "サルバドール・ダリ",
+        icon: "⏰",
+        masterpiece: "代表作：『記憶の固執』『内乱の予感』",
+        works: [
+            { title: "記憶の固執", searchQuery: "Dali The Persistence of Memory" },
+            { title: "内乱の予感", searchQuery: "Dali Soft Construction with Boiled Beans" }
+        ],
+        evaluation: "シュルレアリスムの巨匠。精緻な技法で無意識の世界を描き、奇想天外な作品を生み出しました。",
+        personality: "奇抜で演劇的。自己顕示欲が強く、常識を超越した天才肌の性格です。"
+    },
+    magritte: {
+        name: "ルネ・マグリット",
+        icon: "🎩",
+        masterpiece: "代表作：『イメージの裏切り』『ピレネーの城』",
+        works: [
+            { title: "イメージの裏切り", searchQuery: "Magritte The Treachery of Images" },
+            { title: "ピレネーの城", searchQuery: "Magritte The Castle of the Pyrenees" }
+        ],
+        evaluation: "哲学的シュルレアリスト。日常的なモチーフを不条理に組み合わせ、現実を問い直しました。",
+        personality: "知的で冷静。謎めいた静けさの中に、深い哲学を秘める思索家です。"
+    },
+    miro: {
+        name: "ジョアン・ミロ",
+        icon: "⭐",
+        masterpiece: "代表作：『星座』『カタロニアの農夫』",
+        works: [
+            { title: "星座", searchQuery: "Miro Constellations" },
+            { title: "カタロニアの農夫", searchQuery: "Miro The Catalan Peasant" }
+        ],
+        evaluation: "詩的シュルレアリスト。記号的な形態と鮮やかな色彩で、夢と無意識の世界を表現しました。",
+        personality: "自由で詩的。子供のような純粋さと、深い精神性を併せ持つ性格です。"
+    },
+    ernst: {
+        name: "マックス・エルンスト",
+        icon: "🦅",
+        masterpiece: "代表作：『百頭女』『森と太陽』",
+        works: [
+            { title: "百頭女", searchQuery: "Max Ernst La Femme 100 Têtes" },
+            { title: "森と太陽", searchQuery: "Max Ernst The Forest and the Sun" }
+        ],
+        evaluation: "技法の革新者。フロッタージュやデカルコマニーを開発し、偶然性を芸術に取り入れました。",
+        personality: "実験的で知的。技法の探求を通じて無意識を表現する、革新的な性格です。"
+    },
+    tanguy: {
+        name: "イヴ・タンギー",
+        icon: "🌊",
+        masterpiece: "代表作：『ママ、パパは傷ついた！』『無限の可分性』",
+        works: [
+            { title: "ママ、パパは傷ついた！", searchQuery: "Tanguy Mama Papa is Wounded" },
+            { title: "無限の可分性", searchQuery: "Tanguy Indefinite Divisibility" }
+        ],
+        evaluation: "幻想的風景の画家。無限に広がる空間に、不思議な有機的形態を配置しました。",
+        personality: "夢想的で神秘的。内なる幻視を追求する、静かな情熱の持ち主です。"
+    },
+    delvaux: {
+        name: "ポール・デルヴォー",
+        icon: "🏛️",
+        masterpiece: "代表作：『眠れるヴィーナス』『夜の汽車』",
+        works: [
+            { title: "眠れるヴィーナス", searchQuery: "Delvaux Sleeping Venus" },
+            { title: "夜の汽車", searchQuery: "Delvaux The Night Train" }
+        ],
+        evaluation: "静謐な夢の世界を描く画家。古典的な裸婦像と幻想的な空間を融合させました。",
+        personality: "静かで内向的。古典への憧憬と夢想を抱く、ロマンティックな性格です。"
+    },
+    masson: {
+        name: "アンドレ・マッソン",
+        icon: "🎨",
+        masterpiece: "代表作：『魚の戦い』『迷宮』",
+        works: [
+            { title: "魚の戦い", searchQuery: "Andre Masson Battle of Fishes" },
+            { title: "迷宮", searchQuery: "Andre Masson Labyrinth" }
+        ],
+        evaluation: "自動記述の先駆者。無意識の流れを直接キャンバスに表現する技法を開拓しました。",
+        personality: "情熱的で衝動的。無意識の力を信じる、直感的な性格です。"
+    },
+    picabia: {
+        name: "フランシス・ピカビア",
+        icon: "⚙️",
+        masterpiece: "代表作：『アモローザ・パレード』『ウダイプール』",
+        works: [
+            { title: "アモローザ・パレード", searchQuery: "Picabia Amorous Parade" },
+            { title: "ウダイプール", searchQuery: "Picabia Udnie" }
+        ],
+        evaluation: "変幻自在の画家。ダダからシュルレアリスムまで、様々なスタイルを自在に操りました。",
+        personality: "反抗的で自由奔放。既成概念を嫌い、常に変化を求める性格です。"
+    },
+    manray: {
+        name: "マン・レイ",
+        icon: "📷",
+        masterpiece: "代表作：『涙』『アングルのヴァイオリン』",
+        works: [
+            { title: "涙", searchQuery: "Man Ray Tears" },
+            { title: "アングルのヴァイオリン", searchQuery: "Man Ray Le Violon d'Ingres" }
+        ],
+        evaluation: "写真とシュルレアリスムの融合。レイヨグラフなど独自の技法で、新しい視覚表現を開拓しました。",
+        personality: "実験的で遊び心がある。芸術の境界を超える、自由な精神の持ち主です。"
+    },
+    chirico: {
+        name: "ジョルジョ・デ・キリコ",
+        icon: "🏛️",
+        masterpiece: "代表作：『通りの神秘と憂鬱』『予言者の報酬』",
+        works: [
+            { title: "通りの神秘と憂鬱", searchQuery: "De Chirico Mystery and Melancholy of a Street" },
+            { title: "予言者の報酬", searchQuery: "De Chirico The Soothsayer's Recompense" }
+        ],
+        evaluation: "形而上絵画の創始者。シュルレアリスムの先駆けとなる、謎めいた世界を描きました。",
+        personality: "哲学的で神秘的。夢と現実の境界を探求する、知的で謎めいた性格です。"
     }
 };
 
@@ -3602,6 +3720,415 @@ const artMovementQuestionTree = {
     ]
 };
 
+// シュールレアリスムの質問ツリー（7階層）
+const surrealismQuestionTree = {
+    level: 1,
+    question: "シュルレアリスムで最も表現したいものは何ですか？",
+    options: [
+        {
+            text: "無意識と夢の世界",
+            next: {
+                level: 2,
+                question: "どのような夢を描きますか？",
+                options: [
+                    {
+                        text: "奇想天外で劇的な夢",
+                        next: {
+                            level: 3,
+                            question: "どのように表現しますか？",
+                            options: [
+                                {
+                                    text: "精緻な技法で",
+                                    next: {
+                                        level: 4,
+                                        question: "何を描きますか？",
+                                        options: [
+                                            {
+                                                text: "溶ける時計や象",
+                                                next: {
+                                                    level: 5,
+                                                    question: "あなたの性格は？",
+                                                    options: [
+                                                        {
+                                                            text: "奇抜で演劇的",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "何を追求？",
+                                                                options: [
+                                                                    { text: "自己顕示", next: { level: 7, question: "どんなスタイル？", options: [
+                                                                        { text: "パラノイア批判的", next: { result: "dali" } },
+                                                                        { text: "超現実的", next: { result: "dali" } }
+                                                                    ]}},
+                                                                    { text: "天才的", next: { result: "dali" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "挑発的", next: { result: "dali" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "有機的な形態",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな世界？",
+                                                    options: [
+                                                        {
+                                                            text: "無限の空間",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "夢想的", next: { level: 7, question: "何を表現？", options: [
+                                                                        { text: "内なる幻視", next: { result: "tanguy" } },
+                                                                        { text: "神秘的空間", next: { result: "tanguy" } }
+                                                                    ]}},
+                                                                    { text: "神秘的", next: { result: "tanguy" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "幻想的風景", next: { result: "tanguy" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "自動記述で",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現？",
+                                        options: [
+                                            {
+                                                text: "無意識の流れ",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな技法？",
+                                                    options: [
+                                                        {
+                                                            text: "衝動的な線",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "情熱的", next: { level: 7, question: "何を信じる？", options: [
+                                                                        { text: "無意識の力", next: { result: "masson" } },
+                                                                        { text: "直感", next: { result: "masson" } }
+                                                                    ]}},
+                                                                    { text: "衝動的", next: { result: "masson" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "偶然の技法", next: { result: "ernst" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "技法の実験",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな技法？",
+                                                    options: [
+                                                        { text: "フロッタージュ", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "実験的", next: { result: "ernst" } },
+                                                            { text: "革新的", next: { result: "ernst" } }
+                                                        ]}},
+                                                        { text: "デカルコマニー", next: { result: "ernst" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "静謐で詩的な夢",
+                        next: {
+                            level: 3,
+                            question: "どのような世界を描きますか？",
+                            options: [
+                                {
+                                    text: "古典的な裸婦と幻想",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現？",
+                                        options: [
+                                            {
+                                                text: "静かな夢の世界",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな雰囲気？",
+                                                    options: [
+                                                        {
+                                                            text: "夜の静寂",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "静かで内向的", next: { level: 7, question: "何を愛する？", options: [
+                                                                        { text: "古典美", next: { result: "delvaux" } },
+                                                                        { text: "夢想", next: { result: "delvaux" } }
+                                                                    ]}},
+                                                                    { text: "ロマンティック", next: { result: "delvaux" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "神秘的", next: { result: "delvaux" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "記号的な形態",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな表現？",
+                                                    options: [
+                                                        { text: "星と月", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "自由", next: { result: "miro" } },
+                                                            { text: "詩的", next: { result: "miro" } }
+                                                        ]}},
+                                                        { text: "鮮やかな色彩", next: { result: "miro" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "記号と色彩の詩",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現しますか？",
+                                        options: [
+                                            {
+                                                text: "子供のような純粋さ",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな作品？",
+                                                    options: [
+                                                        {
+                                                            text: "星座のような",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "自由で詩的", next: { level: 7, question: "何を表現？", options: [
+                                                                        { text: "夢の世界", next: { result: "miro" } },
+                                                                        { text: "無意識", next: { result: "miro" } }
+                                                                    ]}},
+                                                                    { text: "純粋", next: { result: "miro" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "カタロニアの魂", next: { result: "miro" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "幻想的風景", next: { result: "tanguy" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            text: "現実の不条理と謎",
+            next: {
+                level: 2,
+                question: "どのように現実を問い直しますか？",
+                options: [
+                    {
+                        text: "哲学的に知的に",
+                        next: {
+                            level: 3,
+                            question: "何を問いますか？",
+                            options: [
+                                {
+                                    text: "イメージと言葉の関係",
+                                    next: {
+                                        level: 4,
+                                        question: "どのように表現？",
+                                        options: [
+                                            {
+                                                text: "日常的なモチーフで",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を描く？",
+                                                    options: [
+                                                        {
+                                                            text: "パイプや帽子",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "知的で冷静", next: { level: 7, question: "何を追求？", options: [
+                                                                        { text: "哲学的問い", next: { result: "magritte" } },
+                                                                        { text: "謎", next: { result: "magritte" } }
+                                                                    ]}},
+                                                                    { text: "謎めいた", next: { result: "magritte" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "空に浮かぶ岩", next: { result: "magritte" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "形而上的に",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな世界？",
+                                                    options: [
+                                                        { text: "静寂の広場", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "哲学的", next: { result: "chirico" } },
+                                                            { text: "神秘的", next: { result: "chirico" } }
+                                                        ]}},
+                                                        { text: "謎めいた影", next: { result: "chirico" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "時間と空間の謎",
+                                    next: {
+                                        level: 4,
+                                        question: "何を表現？",
+                                        options: [
+                                            {
+                                                text: "形而上的空間",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな雰囲気？",
+                                                    options: [
+                                                        {
+                                                            text: "不可解な静寂",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "哲学的で神秘的", next: { level: 7, question: "何を探求？", options: [
+                                                                        { text: "夢と現実", next: { result: "chirico" } },
+                                                                        { text: "時間の謎", next: { result: "chirico" } }
+                                                                    ]}},
+                                                                    { text: "知的", next: { result: "chirico" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "マネキンと影", next: { result: "chirico" } }
+                                                    ]
+                                                }
+                                            },
+                                            { text: "不条理な組み合わせ", next: { result: "magritte" } }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        text: "実験的に革新的に",
+                        next: {
+                            level: 3,
+                            question: "どのような実験をしますか？",
+                            options: [
+                                {
+                                    text: "写真と絵画の融合",
+                                    next: {
+                                        level: 4,
+                                        question: "何を創造？",
+                                        options: [
+                                            {
+                                                text: "新しい視覚表現",
+                                                next: {
+                                                    level: 5,
+                                                    question: "どんな技法？",
+                                                    options: [
+                                                        {
+                                                            text: "レイヨグラフ",
+                                                            next: {
+                                                                level: 6,
+                                                                question: "あなたの性格は？",
+                                                                options: [
+                                                                    { text: "実験的", next: { level: 7, question: "何を追求？", options: [
+                                                                        { text: "新しい表現", next: { result: "manray" } },
+                                                                        { text: "遊び心", next: { result: "manray" } }
+                                                                    ]}},
+                                                                    { text: "自由", next: { result: "manray" } }
+                                                                ]
+                                                            }
+                                                        },
+                                                        { text: "ソラリゼーション", next: { result: "manray" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "様々なスタイル",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を重視？",
+                                                    options: [
+                                                        { text: "変化と自由", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "反抗的", next: { result: "picabia" } },
+                                                            { text: "自由奔放", next: { result: "picabia" } }
+                                                        ]}},
+                                                        { text: "機械的美", next: { result: "picabia" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    text: "偶然性の技法",
+                                    next: {
+                                        level: 4,
+                                        question: "どんな技法？",
+                                        options: [
+                                            {
+                                                text: "フロッタージュやデカルコマニー",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        { text: "森や鳥", next: { level: 6, question: "あなたの性格は？", options: [
+                                                            { text: "実験的で知的", next: { result: "ernst" } },
+                                                            { text: "革新的", next: { result: "ernst" } }
+                                                        ]}},
+                                                        { text: "幻想的世界", next: { result: "ernst" } }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                text: "自動記述",
+                                                next: {
+                                                    level: 5,
+                                                    question: "何を表現？",
+                                                    options: [
+                                                        { text: "無意識", next: { result: "masson" } },
+                                                        { text: "衝動", next: { result: "masson" } }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+};
+
 // 世界の画家の質問ツリー（7階層）
 const worldQuestionTree = {
     level: 1,
@@ -4845,7 +5372,7 @@ const musicianQuestionTree = {
                                                     question: "どんな作品を書きますか？",
                                                     options: [
                                                         {
-                                                            text: "受難曲やカンタータ",
+                                                            text: "宗教的な声楽曲",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
@@ -4865,7 +5392,7 @@ const musicianQuestionTree = {
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "フーガ", next: { result: "bach" } }
+                                                        { text: "複雑な器楽曲", next: { result: "bach" } }
                                                     ]
                                                 }
                                             },
@@ -4952,7 +5479,7 @@ const musicianQuestionTree = {
                                                     question: "どんな作品？",
                                                     options: [
                                                         {
-                                                            text: "楽劇",
+                                                            text: "壮大な舞台作品",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
@@ -4965,7 +5492,7 @@ const musicianQuestionTree = {
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "指環", next: { result: "wagner" } }
+                                                        { text: "神話的な物語", next: { result: "wagner" } }
                                                     ]
                                                 }
                                             },
@@ -4985,11 +5512,11 @@ const musicianQuestionTree = {
                                                     level: 5,
                                                     question: "どんな作品？",
                                                     options: [
-                                                        { text: "バレエ音楽", next: { level: 6, question: "あなたの性格は？", options: [
+                                                        { text: "舞台音楽", next: { level: 6, question: "あなたの性格は？", options: [
                                                             { text: "情熱的", next: { result: "tchaikovsky" } },
                                                             { text: "ロマンティック", next: { result: "tchaikovsky" } }
                                                         ]}},
-                                                        { text: "交響曲", next: { result: "tchaikovsky" } }
+                                                        { text: "大規模な管弦楽曲", next: { result: "tchaikovsky" } }
                                                     ]
                                                 }
                                             },
@@ -5028,7 +5555,7 @@ const musicianQuestionTree = {
                                                     question: "どんな作品を書きますか？",
                                                     options: [
                                                         {
-                                                            text: "オペラや協奏曲",
+                                                            text: "華やかな舞台作品や器楽曲",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
@@ -5041,7 +5568,7 @@ const musicianQuestionTree = {
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "レクイエム", next: { result: "mozart" } }
+                                                        { text: "荘厳な宗教曲", next: { result: "mozart" } }
                                                     ]
                                                 }
                                             },
@@ -5061,8 +5588,8 @@ const musicianQuestionTree = {
                                                     level: 5,
                                                     question: "どんな作品？",
                                                     options: [
-                                                        { text: "バレエ", next: { result: "tchaikovsky" } },
-                                                        { text: "悲愴", next: { result: "tchaikovsky" } }
+                                                        { text: "舞台音楽", next: { result: "tchaikovsky" } },
+                                                        { text: "悲劇的な管弦楽曲", next: { result: "tchaikovsky" } }
                                                     ]
                                                 }
                                             },
@@ -5086,7 +5613,7 @@ const musicianQuestionTree = {
                                         question: "何を歌いますか？",
                                         options: [
                                             {
-                                                text: "冬の旅や死と乙女",
+                                                text: "旅や死をテーマにした歌",
                                                 next: {
                                                     level: 5,
                                                     question: "あなたの性格は？",
@@ -5098,8 +5625,8 @@ const musicianQuestionTree = {
                                                                 question: "何を表現？",
                                                                 options: [
                                                                     { text: "孤独", next: { level: 7, question: "どんな作品？", options: [
-                                                                        { text: "歌曲", next: { result: "schubert" } },
-                                                                        { text: "未完成", next: { result: "schubert" } }
+                                                                        { text: "詩的な歌曲", next: { result: "schubert" } },
+                                                                        { text: "未完の管弦楽曲", next: { result: "schubert" } }
                                                                     ]}},
                                                                     { text: "憂愁", next: { result: "schubert" } }
                                                                 ]
@@ -5133,7 +5660,7 @@ const musicianQuestionTree = {
                                         question: "何を表現しますか？",
                                         options: [
                                             {
-                                                text: "夜想曲やバラード",
+                                                text: "夜の静けさや物語性",
                                                 next: {
                                                     level: 5,
                                                     question: "あなたの性格は？",
@@ -5145,8 +5672,8 @@ const musicianQuestionTree = {
                                                                 question: "何を想う？",
                                                                 options: [
                                                                     { text: "祖国ポーランド", next: { level: 7, question: "どんな作品？", options: [
-                                                                        { text: "ノクターン", next: { result: "chopin" } },
-                                                                        { text: "バラード", next: { result: "chopin" } }
+                                                                        { text: "静かな夜想曲", next: { result: "chopin" } },
+                                                                        { text: "劇的な物語曲", next: { result: "chopin" } }
                                                                     ]}},
                                                                     { text: "失われた故郷", next: { result: "chopin" } }
                                                                 ]
@@ -5156,7 +5683,7 @@ const musicianQuestionTree = {
                                                     ]
                                                 }
                                             },
-                                            { text: "マズルカやポロネーズ", next: { result: "chopin" } }
+                                            { text: "民族舞曲", next: { result: "chopin" } }
                                         ]
                                     }
                                 }
@@ -5197,8 +5724,8 @@ const musicianQuestionTree = {
                                                                 question: "何と戦いますか？",
                                                                 options: [
                                                                     { text: "運命", next: { level: 7, question: "どんな作品？", options: [
-                                                                        { text: "第九", next: { result: "beethoven" } },
-                                                                        { text: "運命", next: { result: "beethoven" } }
+                                                                        { text: "合唱付き交響曲", next: { result: "beethoven" } },
+                                                                        { text: "劇的な交響曲", next: { result: "beethoven" } }
                                                                     ]}},
                                                                     { text: "聴覚喪失", next: { result: "beethoven" } }
                                                                 ]
@@ -5224,8 +5751,8 @@ const musicianQuestionTree = {
                                                     level: 5,
                                                     question: "どんな作品？",
                                                     options: [
-                                                        { text: "巨大な交響曲", next: { result: "mahler" } },
-                                                        { text: "大地の歌", next: { result: "mahler" } }
+                                                        { text: "壮大な管弦楽曲", next: { result: "mahler" } },
+                                                        { text: "東洋的な声楽曲", next: { result: "mahler" } }
                                                     ]
                                                 }
                                             },
@@ -5255,7 +5782,7 @@ const musicianQuestionTree = {
                                                     question: "どんな作品？",
                                                     options: [
                                                         {
-                                                            text: "海や月の光",
+                                                            text: "自然の情景を描く",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
@@ -5268,7 +5795,7 @@ const musicianQuestionTree = {
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "牧神の午後", next: { result: "debussy" } }
+                                                        { text: "神話的な世界", next: { result: "debussy" } }
                                                     ]
                                                 }
                                             },
@@ -5288,11 +5815,11 @@ const musicianQuestionTree = {
                                                     level: 5,
                                                     question: "どんな作品？",
                                                     options: [
-                                                        { text: "指環やトリスタン", next: { level: 6, question: "あなたの性格は？", options: [
+                                                        { text: "神話的な大作", next: { level: 6, question: "あなたの性格は？", options: [
                                                             { text: "野心的", next: { result: "wagner" } },
                                                             { text: "革命的", next: { result: "wagner" } }
                                                         ]}},
-                                                        { text: "無限旋律", next: { result: "wagner" } }
+                                                        { text: "途切れない旋律", next: { result: "wagner" } }
                                                     ]
                                                 }
                                             },
@@ -5351,15 +5878,15 @@ const writerQuestionTree = {
                                                                             question: "何を理解していますか？",
                                                                             options: [
                                                                                 { text: "人間の本質", next: { result: "shakespeare" } },
-                                                                                { text: "普遍的な真理", next: { result: "shakespeare" } }
+                                                                                { text: "普遍的な真理", next: { result: "goethe" } }
                                                                             ]
                                                                         }
                                                                     },
-                                                                    { text: "多才", next: { result: "shakespeare" } }
+                                                                    { text: "多才", next: { result: "goethe" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "ハムレットやマクベス", next: { result: "shakespeare" } }
+                                                        { text: "悲劇と喜劇の両方", next: { result: "shakespeare" } }
                                                     ]
                                                 }
                                             },
@@ -5377,13 +5904,13 @@ const writerQuestionTree = {
                                                                 options: [
                                                                     { text: "知的", next: { level: 7, question: "何を目指す？", options: [
                                                                         { text: "万能の天才", next: { result: "goethe" } },
-                                                                        { text: "真理の探求", next: { result: "goethe" } }
+                                                                        { text: "真理の探求", next: { result: "tolstoy" } }
                                                                     ]}},
-                                                                    { text: "多才", next: { result: "goethe" } }
+                                                                    { text: "多才", next: { result: "shakespeare" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "ファウスト", next: { result: "goethe" } }
+                                                        { text: "人間の探求物語", next: { result: "goethe" } }
                                                     ]
                                                 }
                                             }
@@ -5403,20 +5930,20 @@ const writerQuestionTree = {
                                                     question: "どんなスケール？",
                                                     options: [
                                                         {
-                                                            text: "戦争と平和",
+                                                            text: "歴史的大作",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
                                                                 options: [
                                                                     { text: "真理を追求", next: { level: 7, question: "何を問う？", options: [
                                                                         { text: "人生の意味", next: { result: "tolstoy" } },
-                                                                        { text: "道徳", next: { result: "tolstoy" } }
+                                                                        { text: "道徳", next: { result: "dostoevsky" } }
                                                                     ]}},
-                                                                    { text: "誠実", next: { result: "tolstoy" } }
+                                                                    { text: "誠実", next: { result: "goethe" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "アンナ・カレーニナ", next: { result: "tolstoy" } }
+                                                        { text: "恋愛悲劇", next: { result: "dostoevsky" } }
                                                     ]
                                                 }
                                             },
@@ -5428,9 +5955,9 @@ const writerQuestionTree = {
                                                     options: [
                                                         { text: "人間愛", next: { level: 6, question: "あなたの性格は？", options: [
                                                             { text: "情熱的", next: { result: "hugo" } },
-                                                            { text: "正義感が強い", next: { result: "hugo" } }
+                                                            { text: "正義感が強い", next: { result: "tolstoy" } }
                                                         ]}},
-                                                        { text: "社会改革", next: { result: "hugo" } }
+                                                        { text: "社会改革", next: { result: "dostoevsky" } }
                                                     ]
                                                 }
                                             }
@@ -5459,20 +5986,20 @@ const writerQuestionTree = {
                                                     question: "何を問いますか？",
                                                     options: [
                                                         {
-                                                            text: "罪と罰",
+                                                            text: "犯罪と良心",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
                                                                 options: [
                                                                     { text: "深く内省的", next: { level: 7, question: "何を求める？", options: [
                                                                         { text: "魂の救済", next: { result: "dostoevsky" } },
-                                                                        { text: "信仰", next: { result: "dostoevsky" } }
+                                                                        { text: "信仰", next: { result: "tolstoy" } }
                                                                     ]}},
-                                                                    { text: "哲学的", next: { result: "dostoevsky" } }
+                                                                    { text: "哲学的", next: { result: "goethe" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "カラマーゾフの兄弟", next: { result: "dostoevsky" } }
+                                                        { text: "兄弟の物語", next: { result: "tolstoy" } }
                                                     ]
                                                 }
                                             },
@@ -5502,11 +6029,11 @@ const writerQuestionTree = {
                                                     level: 5,
                                                     question: "何を描く？",
                                                     options: [
-                                                        { text: "レ・ミゼラブル", next: { level: 6, question: "あなたの性格は？", options: [
+                                                        { text: "壮大な社会小説", next: { level: 6, question: "あなたの性格は？", options: [
                                                             { text: "理想主義", next: { result: "hugo" } },
-                                                            { text: "情熱的", next: { result: "hugo" } }
+                                                            { text: "情熱的", next: { result: "baudelaire" } }
                                                         ]}},
-                                                        { text: "弱者への愛", next: { result: "hugo" } }
+                                                        { text: "弱者への愛", next: { result: "tolstoy" } }
                                                     ]
                                                 }
                                             },
@@ -5516,11 +6043,11 @@ const writerQuestionTree = {
                                                     level: 5,
                                                     question: "何を描く？",
                                                     options: [
-                                                        { text: "老人と海", next: { level: 6, question: "あなたの性格は？", options: [
+                                                        { text: "人間と自然の闘い", next: { level: 6, question: "あなたの性格は？", options: [
                                                             { text: "男性的", next: { result: "hemingway" } },
-                                                            { text: "勇敢", next: { result: "hemingway" } }
+                                                            { text: "勇敢", next: { result: "hugo" } }
                                                         ]}},
-                                                        { text: "人間の誇り", next: { result: "hemingway" } }
+                                                        { text: "人間の誇り", next: { result: "goethe" } }
                                                     ]
                                                 }
                                             }
@@ -5546,7 +6073,7 @@ const writerQuestionTree = {
                             question: "何を表現しますか？",
                             options: [
                                 {
-                                    text: "悪の華",
+                                    text: "美と悪の境界",
                                     next: {
                                         level: 4,
                                         question: "どのように？",
@@ -5558,20 +6085,20 @@ const writerQuestionTree = {
                                                     question: "何を描きますか？",
                                                     options: [
                                                         {
-                                                            text: "美と悪の境界",
+                                                            text: "美と悪の共存",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
                                                                 options: [
                                                                     { text: "退廃的", next: { level: 7, question: "何を追求？", options: [
                                                                         { text: "憂鬱の美学", next: { result: "baudelaire" } },
-                                                                        { text: "官能と美", next: { result: "baudelaire" } }
+                                                                        { text: "官能と美", next: { result: "marquez" } }
                                                                     ]}},
-                                                                    { text: "繊細", next: { result: "baudelaire" } }
+                                                                    { text: "繊細", next: { result: "kafka" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "パリの憂鬱", next: { result: "baudelaire" } }
+                                                        { text: "都会の憂鬱", next: { result: "kafka" } }
                                                     ]
                                                 }
                                             },
@@ -5581,11 +6108,11 @@ const writerQuestionTree = {
                                                     level: 5,
                                                     question: "どんな世界？",
                                                     options: [
-                                                        { text: "マジックリアリズム", next: { level: 6, question: "あなたの性格は？", options: [
+                                                        { text: "幻想と現実の融合", next: { level: 6, question: "あなたの性格は？", options: [
                                                             { text: "幻想的", next: { result: "marquez" } },
-                                                            { text: "魔術的", next: { result: "marquez" } }
+                                                            { text: "魔術的", next: { result: "baudelaire" } }
                                                         ]}},
-                                                        { text: "百年の孤独", next: { result: "marquez" } }
+                                                        { text: "家族の物語", next: { result: "joyce" } }
                                                     ]
                                                 }
                                             }
@@ -5605,20 +6132,20 @@ const writerQuestionTree = {
                                                     question: "何を描きますか？",
                                                     options: [
                                                         {
-                                                            text: "変身や審判",
+                                                            text: "寓話的な物語",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
                                                                 options: [
                                                                     { text: "不安", next: { level: 7, question: "何を感じる？", options: [
                                                                         { text: "孤独", next: { result: "kafka" } },
-                                                                        { text: "不条理", next: { result: "kafka" } }
+                                                                        { text: "不条理", next: { result: "baudelaire" } }
                                                                     ]}},
-                                                                    { text: "内向的", next: { result: "kafka" } }
+                                                                    { text: "内向的", next: { result: "joyce" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "城", next: { result: "kafka" } }
+                                                        { text: "権力への抵抗", next: { result: "hugo" } }
                                                     ]
                                                 }
                                             },
@@ -5658,20 +6185,20 @@ const writerQuestionTree = {
                                                     question: "どんな作品？",
                                                     options: [
                                                         {
-                                                            text: "ユリシーズ",
+                                                            text: "一日の物語を壮大に",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
                                                                 options: [
                                                                     { text: "実験的", next: { level: 7, question: "何に挑戦？", options: [
                                                                         { text: "小説の革新", next: { result: "joyce" } },
-                                                                        { text: "意識の表現", next: { result: "joyce" } }
+                                                                        { text: "意識の表現", next: { result: "kafka" } }
                                                                     ]}},
-                                                                    { text: "前衛的", next: { result: "joyce" } }
+                                                                    { text: "前衛的", next: { result: "marquez" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "フィネガンズ・ウェイク", next: { result: "joyce" } }
+                                                        { text: "夢の言語", next: { result: "baudelaire" } }
                                                     ]
                                                 }
                                             },
@@ -5683,9 +6210,9 @@ const writerQuestionTree = {
                                                     options: [
                                                         { text: "男の誇り", next: { level: 6, question: "あなたの性格は？", options: [
                                                             { text: "ハードボイルド", next: { result: "hemingway" } },
-                                                            { text: "行動的", next: { result: "hemingway" } }
+                                                            { text: "行動的", next: { result: "hugo" } }
                                                         ]}},
-                                                        { text: "人間の尊厳", next: { result: "hemingway" } }
+                                                        { text: "人間の尊厳", next: { result: "goethe" } }
                                                     ]
                                                 }
                                             }
@@ -5705,20 +6232,20 @@ const writerQuestionTree = {
                                                     question: "何を描きますか？",
                                                     options: [
                                                         {
-                                                            text: "百年の孤独",
+                                                            text: "家族の歴史",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
                                                                 options: [
                                                                     { text: "幻想的", next: { level: 7, question: "何を表現？", options: [
                                                                         { text: "ラテンアメリカの魂", next: { result: "marquez" } },
-                                                                        { text: "魔術的現実", next: { result: "marquez" } }
+                                                                        { text: "魔術的現実", next: { result: "baudelaire" } }
                                                                     ]}},
-                                                                    { text: "情熱的", next: { result: "marquez" } }
+                                                                    { text: "情熱的", next: { result: "hugo" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "コレラの時代の愛", next: { result: "marquez" } }
+                                                        { text: "愛の物語", next: { result: "hemingway" } }
                                                     ]
                                                 }
                                             },
@@ -5766,14 +6293,14 @@ const writerQuestionTree = {
                                                     level: 5,
                                                     question: "何を描く？",
                                                     options: [
-                                                        { text: "レ・ミゼラブル", next: { level: 6, question: "あなたの性格は？", options: [
+                                                        { text: "壮大な社会小説", next: { level: 6, question: "あなたの性格は？", options: [
                                                             { text: "理想主義", next: { level: 7, question: "何を信じる？", options: [
                                                                 { text: "人間愛", next: { result: "hugo" } },
-                                                                { text: "正義", next: { result: "hugo" } }
+                                                                { text: "正義", next: { result: "tolstoy" } }
                                                             ]}},
-                                                            { text: "情熱的", next: { result: "hugo" } }
+                                                            { text: "情熱的", next: { result: "dostoevsky" } }
                                                         ]}},
-                                                        { text: "ノートルダム", next: { result: "hugo" } }
+                                                        { text: "歴史ロマンス", next: { result: "goethe" } }
                                                     ]
                                                 }
                                             },
@@ -5803,11 +6330,11 @@ const writerQuestionTree = {
                                                     level: 5,
                                                     question: "何を描く？",
                                                     options: [
-                                                        { text: "老人と海", next: { level: 6, question: "あなたの性格は？", options: [
+                                                        { text: "人間と自然の闘い", next: { level: 6, question: "あなたの性格は？", options: [
                                                             { text: "男性的", next: { result: "hemingway" } },
-                                                            { text: "勇敢", next: { result: "hemingway" } }
+                                                            { text: "勇敢", next: { result: "hugo" } }
                                                         ]}},
-                                                        { text: "武器よさらば", next: { result: "hemingway" } }
+                                                        { text: "戦争と愛", next: { result: "tolstoy" } }
                                                     ]
                                                 }
                                             },
@@ -5836,11 +6363,11 @@ const writerQuestionTree = {
                                                     level: 5,
                                                     question: "何を表現？",
                                                     options: [
-                                                        { text: "変身", next: { level: 6, question: "あなたの性格は？", options: [
+                                                        { text: "人間の変容", next: { level: 6, question: "あなたの性格は？", options: [
                                                             { text: "不安", next: { result: "kafka" } },
-                                                            { text: "孤独", next: { result: "kafka" } }
+                                                            { text: "孤独", next: { result: "baudelaire" } }
                                                         ]}},
-                                                        { text: "審判", next: { result: "kafka" } }
+                                                        { text: "理不尽な裁き", next: { result: "dostoevsky" } }
                                                     ]
                                                 }
                                             },
@@ -5865,16 +6392,16 @@ const writerQuestionTree = {
                                         question: "何を掘り下げる？",
                                         options: [
                                             {
-                                                text: "罪と罰",
+                                                text: "犯罪と良心",
                                                 next: {
                                                     level: 5,
                                                     question: "何を求める？",
                                                     options: [
                                                         { text: "救済", next: { level: 6, question: "あなたの性格は？", options: [
                                                             { text: "哲学的", next: { result: "dostoevsky" } },
-                                                            { text: "内省的", next: { result: "dostoevsky" } }
+                                                            { text: "内省的", next: { result: "tolstoy" } }
                                                         ]}},
-                                                        { text: "信仰", next: { result: "dostoevsky" } }
+                                                        { text: "信仰", next: { result: "goethe" } }
                                                     ]
                                                 }
                                             },
@@ -5921,7 +6448,7 @@ const japaneseWriterQuestionTree = {
                                                     question: "どんな作品？",
                                                     options: [
                                                         {
-                                                            text: "こころ",
+                                                            text: "友情と裏切り",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
@@ -5933,15 +6460,15 @@ const japaneseWriterQuestionTree = {
                                                                             question: "何を追求？",
                                                                             options: [
                                                                                 { text: "人間の心理", next: { result: "soseki" } },
-                                                                                { text: "近代人の苦悩", next: { result: "soseki" } }
+                                                                                { text: "近代人の苦悩", next: { result: "ogai" } }
                                                                             ]
                                                                         }
                                                                     },
-                                                                    { text: "誠実", next: { result: "soseki" } }
+                                                                    { text: "誠実", next: { result: "nakajima" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "吾輩は猫である", next: { result: "soseki" } }
+                                                        { text: "風刺的な物語", next: { result: "akutagawa" } }
                                                     ]
                                                 }
                                             },
@@ -5952,20 +6479,20 @@ const japaneseWriterQuestionTree = {
                                                     question: "どんな作品？",
                                                     options: [
                                                         {
-                                                            text: "舞姫",
+                                                            text: "留学と恋愛",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
                                                                 options: [
                                                                     { text: "理性的", next: { level: 7, question: "何を重視？", options: [
                                                                         { text: "知性", next: { result: "ogai" } },
-                                                                        { text: "品格", next: { result: "ogai" } }
+                                                                        { text: "品格", next: { result: "soseki" } }
                                                                     ]}},
-                                                                    { text: "教養豊か", next: { result: "ogai" } }
+                                                                    { text: "教養豊か", next: { result: "nakajima" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "高瀬舟", next: { result: "ogai" } }
+                                                        { text: "安楽死の物語", next: { result: "soseki" } }
                                                     ]
                                                 }
                                             }
@@ -5985,20 +6512,20 @@ const japaneseWriterQuestionTree = {
                                                     question: "どんな作品？",
                                                     options: [
                                                         {
-                                                            text: "人間失格",
+                                                            text: "破滅への告白",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
                                                                 options: [
                                                                     { text: "繊細", next: { level: 7, question: "何を演じる？", options: [
                                                                         { text: "道化", next: { result: "dazai" } },
-                                                                        { text: "弱さ", next: { result: "dazai" } }
+                                                                        { text: "弱さ", next: { result: "akutagawa" } }
                                                                     ]}},
-                                                                    { text: "自己破壊的", next: { result: "dazai" } }
+                                                                    { text: "自己破壊的", next: { result: "mishima" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "斜陽", next: { result: "dazai" } }
+                                                        { text: "没落する貴族", next: { result: "kawabata" } }
                                                     ]
                                                 }
                                             },
@@ -6016,13 +6543,13 @@ const japaneseWriterQuestionTree = {
                                                                 options: [
                                                                     { text: "美意識が高い", next: { level: 7, question: "何を求める？", options: [
                                                                         { text: "完璧な美", next: { result: "mishima" } },
-                                                                        { text: "劇的な生", next: { result: "mishima" } }
+                                                                        { text: "劇的な生", next: { result: "tanizaki" } }
                                                                     ]}},
-                                                                    { text: "劇的", next: { result: "mishima" } }
+                                                                    { text: "劇的", next: { result: "akutagawa" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "金閣寺", next: { result: "mishima" } }
+                                                        { text: "自己告白", next: { result: "dazai" } }
                                                     ]
                                                 }
                                             }
@@ -6051,20 +6578,20 @@ const japaneseWriterQuestionTree = {
                                                     question: "どんな作品？",
                                                     options: [
                                                         {
-                                                            text: "羅生門や地獄変",
+                                                            text: "古典を題材に",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
                                                                 options: [
                                                                     { text: "繊細", next: { level: 7, question: "何を追求？", options: [
                                                                         { text: "完璧な文章", next: { result: "akutagawa" } },
-                                                                        { text: "芸術至上主義", next: { result: "akutagawa" } }
+                                                                        { text: "芸術至上主義", next: { result: "mishima" } }
                                                                     ]}},
-                                                                    { text: "神経質", next: { result: "akutagawa" } }
+                                                                    { text: "神経質", next: { result: "dazai" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "鼻や芋粥", next: { result: "akutagawa" } }
+                                                        { text: "ユーモラスな短編", next: { result: "soseki" } }
                                                     ]
                                                 }
                                             },
@@ -6075,20 +6602,20 @@ const japaneseWriterQuestionTree = {
                                                     question: "何を描く？",
                                                     options: [
                                                         {
-                                                            text: "山月記",
+                                                            text: "虎になった詩人",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
                                                                 options: [
                                                                     { text: "知的", next: { level: 7, question: "何を持つ？", options: [
                                                                         { text: "誇り", next: { result: "nakajima" } },
-                                                                        { text: "尊厳", next: { result: "nakajima" } }
+                                                                        { text: "尊厳", next: { result: "ogai" } }
                                                                     ]}},
-                                                                    { text: "高潔", next: { result: "nakajima" } }
+                                                                    { text: "高潔", next: { result: "soseki" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "李陵", next: { result: "nakajima" } }
+                                                        { text: "歴史人物の物語", next: { result: "ogai" } }
                                                     ]
                                                 }
                                             }
@@ -6107,11 +6634,11 @@ const japaneseWriterQuestionTree = {
                                                     level: 5,
                                                     question: "どんな作品？",
                                                     options: [
-                                                        { text: "金閣寺", next: { level: 6, question: "あなたの性格は？", options: [
+                                                        { text: "美への執着", next: { level: 6, question: "あなたの性格は？", options: [
                                                             { text: "美意識が高い", next: { result: "mishima" } },
-                                                            { text: "行動的", next: { result: "mishima" } }
+                                                            { text: "行動的", next: { result: "tanizaki" } }
                                                         ]}},
-                                                        { text: "仮面の告白", next: { result: "mishima" } }
+                                                        { text: "自己告白", next: { result: "dazai" } }
                                                     ]
                                                 }
                                             },
@@ -6150,20 +6677,20 @@ const japaneseWriterQuestionTree = {
                                                     question: "どんな作品？",
                                                     options: [
                                                         {
-                                                            text: "雪国",
+                                                            text: "雪深い温泉地",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
                                                                 options: [
                                                                     { text: "繊細", next: { level: 7, question: "何を感じる？", options: [
                                                                         { text: "哀愁", next: { result: "kawabata" } },
-                                                                        { text: "虚無", next: { result: "kawabata" } }
+                                                                        { text: "虚無", next: { result: "dazai" } }
                                                                     ]}},
-                                                                    { text: "美意識が高い", next: { result: "kawabata" } }
+                                                                    { text: "美意識が高い", next: { result: "tanizaki" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "伊豆の踊子", next: { result: "kawabata" } }
+                                                        { text: "初恋の物語", next: { result: "soseki" } }
                                                     ]
                                                 }
                                             },
@@ -6181,13 +6708,13 @@ const japaneseWriterQuestionTree = {
                                                                 options: [
                                                                     { text: "官能的", next: { level: 7, question: "何を描く？", options: [
                                                                         { text: "女性美", next: { result: "tanizaki" } },
-                                                                        { text: "伝統美", next: { result: "tanizaki" } }
+                                                                        { text: "伝統美", next: { result: "kawabata" } }
                                                                     ]}},
-                                                                    { text: "耽美的", next: { result: "tanizaki" } }
+                                                                    { text: "耽美的", next: { result: "kyoka" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "細雪", next: { result: "tanizaki" } }
+                                                        { text: "四姉妹の物語", next: { result: "kawabata" } }
                                                     ]
                                                 }
                                             }
@@ -6206,11 +6733,11 @@ const japaneseWriterQuestionTree = {
                                                     level: 5,
                                                     question: "どんな作品？",
                                                     options: [
-                                                        { text: "細雪", next: { level: 6, question: "あなたの性格は？", options: [
+                                                        { text: "四姉妹の物語", next: { level: 6, question: "あなたの性格は？", options: [
                                                             { text: "官能的", next: { result: "tanizaki" } },
-                                                            { text: "美意識が高い", next: { result: "tanizaki" } }
+                                                            { text: "美意識が高い", next: { result: "kawabata" } }
                                                         ]}},
-                                                        { text: "春琴抄", next: { result: "tanizaki" } }
+                                                        { text: "盲目の美女", next: { result: "kyoka" } }
                                                     ]
                                                 }
                                             },
@@ -6253,20 +6780,20 @@ const japaneseWriterQuestionTree = {
                                                     question: "どんな作品？",
                                                     options: [
                                                         {
-                                                            text: "高野聖",
+                                                            text: "妖艶な怪異譚",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
                                                                 options: [
                                                                     { text: "幻想的", next: { level: 7, question: "何を愛する？", options: [
                                                                         { text: "妖しい美", next: { result: "kyoka" } },
-                                                                        { text: "夢幻", next: { result: "kyoka" } }
+                                                                        { text: "夢幻", next: { result: "tanizaki" } }
                                                                     ]}},
-                                                                    { text: "詩的", next: { result: "kyoka" } }
+                                                                    { text: "詩的", next: { result: "kenji" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "歌行燈", next: { result: "kyoka" } }
+                                                        { text: "幻想的な物語", next: { result: "tanizaki" } }
                                                     ]
                                                 }
                                             },
@@ -6277,20 +6804,20 @@ const japaneseWriterQuestionTree = {
                                                     question: "何を描く？",
                                                     options: [
                                                         {
-                                                            text: "銀河鉄道",
+                                                            text: "星空の旅",
                                                             next: {
                                                                 level: 6,
                                                                 question: "あなたの性格は？",
                                                                 options: [
                                                                     { text: "純粋", next: { level: 7, question: "何を持つ？", options: [
                                                                         { text: "理想主義", next: { result: "kenji" } },
-                                                                        { text: "慈愛", next: { result: "kenji" } }
+                                                                        { text: "慈愛", next: { result: "kawabata" } }
                                                                     ]}},
-                                                                    { text: "自己犠牲的", next: { result: "kenji" } }
+                                                                    { text: "自己犠牲的", next: { result: "dazai" } }
                                                                 ]
                                                             }
                                                         },
-                                                        { text: "注文の多い料理店", next: { result: "kenji" } }
+                                                        { text: "風刺的な童話", next: { result: "soseki" } }
                                                     ]
                                                 }
                                             }
@@ -6309,11 +6836,11 @@ const japaneseWriterQuestionTree = {
                                                     level: 5,
                                                     question: "どんな作品？",
                                                     options: [
-                                                        { text: "銀河鉄道の夜", next: { level: 6, question: "あなたの性格は？", options: [
+                                                        { text: "星空の旅", next: { level: 6, question: "あなたの性格は？", options: [
                                                             { text: "純粋", next: { result: "kenji" } },
-                                                            { text: "理想主義", next: { result: "kenji" } }
+                                                            { text: "理想主義", next: { result: "kawabata" } }
                                                         ]}},
-                                                        { text: "よだかの星", next: { result: "kenji" } }
+                                                        { text: "悲しい星の物語", next: { result: "dazai" } }
                                                     ]
                                                 }
                                             },
@@ -6514,6 +7041,8 @@ function startTest() {
         currentNode = worldQuestionTree;
     } else if (currentGroup === 'artmovement') {
         currentNode = artMovementQuestionTree;
+    } else if (currentGroup === 'surrealism') {
+        currentNode = surrealismQuestionTree;
     } else if (currentGroup === 'avantgarde') {
         currentNode = avantgardeQuestionTree;
     } else if (currentGroup === 'contemporary') {
@@ -6573,6 +7102,8 @@ function showResult(artistKey) {
         artists = worldArtists;
     } else if (currentGroup === 'artmovement') {
         artists = artMovements;
+    } else if (currentGroup === 'surrealism') {
+        artists = surrealismArtists;
     } else if (currentGroup === 'avantgarde') {
         artists = avantgardeArtists;
     } else if (currentGroup === 'contemporary') {
